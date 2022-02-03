@@ -1,5 +1,5 @@
 """Set up the view for our models"""
-from django.shortcuts import render, request
+from django.shortcuts import render
 from django.views import generic
 from .models import Character, Series, Comment
 
