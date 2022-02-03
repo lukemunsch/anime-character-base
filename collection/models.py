@@ -8,6 +8,7 @@ class Series(models.Model):
     """set up the series category"""
     id = models.IntegerField(primary_key=True)
     series_name = models.CharField(max_length=100, unique=True, null=False)
+    approved = models.BooleanField(default=0)
 
     class Meta:
         ordering = ['series_name']
@@ -25,8 +26,8 @@ class Character(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     char_image = CloudinaryField('image', default='placeholder')
     series_name = models.ForeignKey(Series, on_delete=models.CASCADE, related_name="series")
-    first_published = models.DateTimeField(auto_now_add=True)
-    first_aired = models.DateTimeField(auto_now_add=True)
+    first_published = models.DateField(auto_now_add=True)
+    first_aired = models.DateField(auto_now_add=True)
     age = models.PositiveIntegerField(default=0)
     bio = models.TextField(default="Enter bio here", max_length=300)
     good_reason = models.CharField(default='', max_length=100)
