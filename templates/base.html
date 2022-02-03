@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- my stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}}">
 
     <title>Luke's Animé Character Base</title>
 </head>
@@ -28,8 +30,8 @@
 <body>
 
     <!-- nav element -->
-    <nav class="navbar navbar-expand-lg navbar-text-color navbar-dark bg-dark">
-        <a class="navbar-brand mb-0 h1" href="#">Luke's Animé Base</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mb-0 h1 navbar-text-color" href="#">Luke's Animé Base </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -80,15 +82,39 @@
     </nav>
 
     <!-- messages section here -->
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
     <!-- main body -->
-    <main class="flex-shrink-0 ">
+    <main class="flex-shrink-0">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
 
+    <!-- footer element here -->
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="page-footer font-small blue fixed-bottom">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">This is a fan-made site | Created by MunschyProducts ®:
+            
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 
     <!-- jquery and js scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -99,6 +125,13 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script>
+        setTimeout(function() {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
     </script>
 </body>
 

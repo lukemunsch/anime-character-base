@@ -1,4 +1,30 @@
+<!-- reference to the base.html file -->
 {% extends "base.html" %}
 
 {% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 mt-3 left">
+            {% for char in char_list %}
+            <div class="col-md-1">
+                <div class="card">
+                    {% if "placeholder" in character.char_image.url %}
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU"
+                        class="card-img-top" alt="Generic animé logo">
+                    {% else %}
+                    <img src="{{ character.char_image.url }}" alt="{{ character.name }} image" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ character.name }}</h5>
+                        <p class="card-text">{{ character.series_name }}</p>
+                        <a href="#" class="btn btn-primary">View Character</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}
