@@ -11,7 +11,7 @@
             <h1 class="text-center">The Animé Character Base</h1>
             <div class="row">
                 {% for character in character_list %}
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
@@ -25,16 +25,22 @@
                                     <h5>{{ character.name }}</h5>
                                 </div>
                             </div>
-                            <a href="{% url 'character_detail' character.slug %}" class="character-link">
+                            <hr />
+                            <a href="#" class="character-link">
                                 <a href="#" class="btn btn-primary">View Character</a>
                             </a>
+                            {% if user.is_superuser %}
+                            <a href="#" class="character-link">
+                                <a href="#" class="btn btn-primary">Delete Character</a>
+                            </a>
+                            {% endif %}
                             <hr />
-                            <p class="card-text text-muted h6">{{ character.created_on}} <i class="far fa-heart"></i>
-                                {{ character.number_of_likes }}</p>
+                            <p class="card-text text-muted h6">
+                                <i class="far fa-heart"></i>{{ character.number_of_likes }}</p>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:5 %}
+                {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
                 {% endif %}
