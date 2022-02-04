@@ -7,7 +7,7 @@ from .models import Character, Series, Comment
 class CharacterList(generic.ListView):
     """this is the display of our Character model"""
     model = Character
-    queryset = Character.objects.filter(status=1).order_by('-created_on')
+    queryset = Character.objects.filter(status=1).order_by('-series_name')
     template_name = 'index.html'
     paginate_by = 10
 
@@ -15,12 +15,13 @@ class CharacterList(generic.ListView):
 class CharacterDetail(View):
     """this will display the view for the opened character profile"""
     def get(self, request, slug, args, kwargs):
-        queryset = Character.object.filter(ststus=1)
+        """set up how the page will be displayed in character_detail.html"""
+        queryset = Character.object.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
         comments = character.comments.filter(approved=True).order_by('created_on')
-        liked=False
+        liked = False
         if character.likes.filter(id=self.request.user.id).exists():
-            liked=True
+            liked = True
         
         return render(
             request,

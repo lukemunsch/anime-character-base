@@ -7,12 +7,24 @@
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <h1 class="text-center">The Animé Character Base</h1>
+        <div class="col-12 mt-3">
+            <h1 class="text-center orange-text">The Animé Character Base</h1>
+            <!-- search bar element -->
+            <div class="row">
+                <div class="col-md-4">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="hr-white" />
+
+            <!-- visual list list of character cards -->
             <div class="row">
                 {% for character in character_list %}
-                <div class="col-md-2">
-                    <div class="card mb-4">
+                <div class="col-sm-4 col-md-3 margin-under">
+                    <div class="card mb-4 rounded-corners card-shadow">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in character.char_image.url %}
@@ -21,8 +33,11 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ character.char_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <h5>{{ character.name }}</h5>
+                                <div>
+                                    <h5><strong>{{ character.name }}</strong></h5>
+                                </div>
+                                <div>
+                                    <h6 class="text-muted">{{ character.series_name }}</h6>
                                 </div>
                             </div>
                             <hr />
@@ -30,11 +45,14 @@
                                 <a href="#" class="btn btn-primary">View Character</a>
                             </a>
                             {% if user.is_superuser %}
-                            <a href="#" class="character-link">
-                                <a href="#" class="btn btn-primary">Delete Character</a>
+                            <!-- bring up modal for confirmation -->
+                            <hr />
+                            <a href="#" class="character-delete">
+                                <a href="#" class="btn btn-primary btn-delete">Delete Character</a>
                             </a>
                             {% endif %}
                             <hr />
+                            <p>Fan Score:</p>
                             <p class="card-text text-muted h6">
                                 <i class="far fa-heart"></i>{{ character.number_of_likes }}</p>
                         </div>
@@ -57,7 +75,6 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>

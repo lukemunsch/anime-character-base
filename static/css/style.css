@@ -1,2 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Almarai:wght@300;400&display=swap');
 
+body {
+    background-color: rgb(65, 65, 65);
+}
+
+.margin-under {
+    margin-bottom: 60px;
+}
+
+.orange-text {
+    color: rgb(255, 135, 0);
+}
+
+.rounded-corners {
+    border-radius: 10px;
+}
+
+.orange {
+    background-color: rgb(255, 135, 0);
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: rgb(255, 135, 0);
+}
+
+.btn-delete {
+    background-color: maroon;
+    border: 0;
+}
