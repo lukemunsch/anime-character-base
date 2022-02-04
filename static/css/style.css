@@ -8,16 +8,16 @@ body {
     margin-top: 40px;
 }
 
-.white-bg {
-    background-color: white;
-}
-
 .margin-under {
     margin-bottom: 60px;
 }
 
 .orange-text {
     color: rgb(255, 135, 0);
+}
+
+.new-link {
+    color: rgb(107, 181, 255);
 }
 
 .rounded-corners {
@@ -39,12 +39,15 @@ body {
 .btn-primary {
     background-color: rgb(255, 135, 0);
     border-radius: 10px;
+    border-color: rgb(125, 65, 0);
     color: black;
 }
 
 .btn-delete {
     background-color: maroon;
     border: 0;
+    border-radius: 10px;
+    color: white;
 }
 
 .hr-orange {
