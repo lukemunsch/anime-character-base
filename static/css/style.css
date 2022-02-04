@@ -36,12 +36,22 @@ body {
     background-color: rgb(255, 135, 0);
 }
 
+.btn-primary {
+    background-color: rgb(255, 135, 0);
+    border-radius: 10px;
+    color: black;
+}
+
 .btn-delete {
     background-color: maroon;
     border: 0;
 }
 
-.hr-white {
+.hr-orange {
     background-color: rgb(255, 135, 0);
     height: 1px;
+}
+
+label {
+    color: white;
 }
