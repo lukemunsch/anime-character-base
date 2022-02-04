@@ -8,6 +8,10 @@ body {
     margin-top: 40px;
 }
 
+.white-bg {
+    background-color: white;
+}
+
 .margin-under {
     margin-bottom: 60px;
 }
