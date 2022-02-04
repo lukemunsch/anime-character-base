@@ -9,7 +9,7 @@ class CharacterList(generic.ListView):
     model = Character
     queryset = Character.objects.filter(status=1).order_by('-series_name')
     template_name = 'index.html'
-    paginate_by = 10
+    paginate_by = 8
 
 
 class CharacterDetail(View):

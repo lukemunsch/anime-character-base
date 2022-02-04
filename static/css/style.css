@@ -4,6 +4,10 @@ body {
     background-color: rgb(65, 65, 65);
 }
 
+.container-body {
+    margin-top: 40px;
+}
+
 .margin-under {
     margin-bottom: 60px;
 }
@@ -31,4 +35,9 @@ body {
 .btn-delete {
     background-color: maroon;
     border: 0;
+}
+
+.hr-white {
+    background-color: rgb(255, 135, 0);
+    height: 1px;
 }
