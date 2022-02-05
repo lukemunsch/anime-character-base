@@ -9,10 +9,10 @@
                 <!-- image and character name + series -->
                 <div class="row">
                     <div class="col-md-10">
-                        {% if "placeholder" in character.im.url %}
+                        {% if "placeholder" in character.char_image.url %}
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU" width="100%">
                         {% else %}
-                        <img src=" {{ post.featured_image.url }}" width="100%">
+                        <img src=" {{ character.char_image.url }}" width="100%">
                         {% endif %}
                         <p>{{ character.name }} from the series {{ character.series_name }} </p>
                     </div>
