@@ -70,3 +70,21 @@ p, a {
 label {
     color: white;
 }
+
+.image-label {
+    position: absolute;
+    top: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: rgb(255, 135, 0);
+    font-size: 200%;
+}
+
+.image-subtitle {
+    position: absolute;
+    bottom: -1%;
+    min-width: 30%;
+    right: -2px;
+    background-color: rgb(255, 135, 0);
+    font-size: 150%;
+}

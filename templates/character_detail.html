@@ -1,20 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <h1 class="text-center orange-text mb-4"><strong>Animé Character Base</strong></h1>
+        </div>
+    </div>
+</div>
 <div class="masthead">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 offset-md-1">
+
                 <!-- image and character name + series -->
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-6 masthead-image">
                         {% if "placeholder" in character.char_image.url %}
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU" width="100%">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU"
+                            width="100%">
                         {% else %}
                         <img src=" {{ character.char_image.url }}" width="100%">
                         {% endif %}
-                        <p>{{ character.name }} from the series {{ character.series_name }} </p>
+                        <h3 class="image-label">{{ character.name }}</h3>
+                        <h3 class="image-subtitle">from the series: {{ character.series_name }}</h3>
+                    </div>
+                </div>
+                <!-- main body of the character details -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="orange-text">{{ character.age }}</p>
+                        <p class="orange-text">{{ character.bio | safe }}</p>
+                        <p class="orange-text">{{ character.good_reason }}</p>
+                        <p class="orange-text">{{ character.bad_reason }}</p>
+                        <p class="orange-text">{{ character.first_published }}</p>
+                        <p class="orange-text">{{ character.first_aired }}</p>
                     </div>
                 </div>
             </div>
