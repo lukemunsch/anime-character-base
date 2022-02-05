@@ -15,7 +15,7 @@
             <!-- search bar element -->
             <div class="row">
                 <div class="col-md-6">
-                    <p class="orange-text">Feel free to search for your favourite; If you don't see them, please login and send me a suggestion!</p>
+                    <p class="orange-text">Feel free to search for your favourite - If you don't see them, please login and send me a suggestion!</p>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -45,8 +45,8 @@
                                 </div>
                             </div>
                             <hr />
-                            <a href="#" class="character-link">
-                                <a href="#" class="btn btn-primary">View Character</a>
+                            <a href="{% url 'character_detail' character.slug %}" class="character-link">
+                                <button class="btn btn-primary">View Character</button>
                             </a>
                             {% if user.is_superuser %}
                             <!-- bring up modal for confirmation -->
@@ -56,9 +56,8 @@
                             </a>
                             {% endif %}
                             <hr />
+                            <!-- fan score section -->
                             <p>Fan Score:</p>
-                            <p class="card-text text-muted h6">
-                                <i class="far fa-heart"></i>{{ character.number_of_likes }}</p>
                         </div>
                     </div>
                 </div>

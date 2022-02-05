@@ -11,6 +11,7 @@ class Series(models.Model):
     approved = models.BooleanField(default=0)
 
     class Meta:
+        """set up how they will appear on the screen"""
         ordering = ['series_name']
 
     def __str__(self):
@@ -35,7 +36,6 @@ class Character(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=VIEW_CARD, default=0)
-    likes = models.ManyToManyField(User, related_name='character_likes', blank=True)
 
     class Meta:
         """set up how we would like the cards to be ordered"""
@@ -43,9 +43,6 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
-
-    def number_of_likes(self):
-        return self.likes.count()
 
 
 class Comment(models.Model):
