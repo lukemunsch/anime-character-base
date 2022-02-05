@@ -4,6 +4,18 @@ body {
     background-color: rgb(65, 65, 65);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Acme', sans-serif, serif;
+}
+
+p, a {
+    font-family: 'Almarai', sans-serif, serif;
+}
+
+.subtitle {
+    font-weight: 300;
+}
+
 .container-body {
     margin-top: 40px;
 }

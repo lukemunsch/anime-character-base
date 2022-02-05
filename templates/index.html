@@ -8,10 +8,14 @@
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3">
-            <h1 class="text-center orange-text">The Animé Character Base</h1>
+            <h1 class="text-center orange-text"><strong>Animé Character Base</strong></h1>
+            <p class="text-center orange-text subtitle">
+                Welcome to Luke's Animé Character Base, I have created a simple list of favourite chaarcters from the numerous different 
+            </p>
             <!-- search bar element -->
             <div class="row">
                 <div class="col-md-6">
+                    <p class="orange-text">Feel free to search for your favourite; If you don't see them, please login and send me a suggestion!</p>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -33,11 +37,11 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ character.char_image.url }}">
                                 {% endif %}
-                                <div>
+                                <div class="mt-2">
                                     <h5><strong>{{ character.name }}</strong></h5>
                                 </div>
                                 <div>
-                                    <h6 class="text-muted">{{ character.series_name }}</h6>
+                                    <p class="text-muted">{{ character.series_name }}</p>
                                 </div>
                             </div>
                             <hr />
