@@ -12,16 +12,21 @@ class CharacterList(generic.ListView):
     paginate_by = 8
 
 
+class SeriesList(generic.ListView):
+    """This is to display the list of series I have added to my db"""
+    model = Series
+    queryset = Series.objects.filter(approved=1).order_by('series_name')
+    template_name = 'series_list.html'
+    paginate_by = 10
+
+
 class CharacterDetail(View):
     """creating he view for our character's main pages"""
     def get(self, request, slug, *args, **kwargs):
         """retrieving from the database"""
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
-        comments = character.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        
 
         return render(
             request,
@@ -29,7 +34,6 @@ class CharacterDetail(View):
             {
                 "character": character,
                 "commented": False,
-                "liked": liked,
             },
         )
 
@@ -38,9 +42,6 @@ class CharacterDetail(View):
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
         comments = character.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -63,15 +64,3 @@ class CharacterDetail(View):
                 "liked": liked
             },
         )
-
-
-class CharacterLike(View):
-    
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
