@@ -30,7 +30,7 @@ class Character(models.Model):
     first_published = models.DateField(auto_now_add=True)
     first_aired = models.DateField(auto_now_add=True)
     age = models.PositiveIntegerField(default=0)
-    bio = models.TextField(default="Enter bio here", max_length=1000)
+    bio = models.TextField(default="Enter bio here", max_length=4000)
     special = models.CharField(default='None', max_length=200)
     good_reason = models.CharField(default='', max_length=100)
     bad_reason = models.CharField(default='', max_length=100)

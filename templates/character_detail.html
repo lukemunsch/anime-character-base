@@ -11,7 +11,7 @@
 <div class="masthead">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-10 offset-md-1">
+            <div class="col-md-10 offset-md-1 mb-5">
 
                 <!-- image and character name + series -->
                 <div class="row">
@@ -25,16 +25,21 @@
                         <h3 class="image-label">{{ character.name }}</h3>
                         <h3 class="image-subtitle">from the series: {{ character.series_name }}</h3>
                     </div>
+                    <div class="col-md-6 d-inline mt-3">
+                        <h3 class="orange-text"><strong>CHARACTER STATS</strong></h3>
+                        <p class="orange-text"><strong>Age -</strong> {{ character.age }}</p>
+                        <p class="orange-text"><strong>Special Ability -</strong> {{ character.special }}</p>
+                        <p class="orange-text"><strong>Popular because -</strong> {{ character.good_reason }}</p>
+                        <p class="orange-text"><strong>Downside -</strong> {{ character.bad_reason }}</p>
+                        <p class="orange-text"><strong>First Published -</strong> {{ character.first_published }}</p>
+                        <p class="orange-text"><strong>First Aired -</strong> {{ character.first_aired }}</p>
+                    </div>
                 </div>
                 <!-- main body of the character details -->
                 <div class="row">
-                    <div class="col-md-6">
-                        <p class="orange-text">{{ character.age }}</p>
+                    <div class="col-md-12 bio-bg mb-5">
+                        <p class="orange-text"><strong>Character Bio -</strong></p>
                         <p class="orange-text">{{ character.bio | safe }}</p>
-                        <p class="orange-text">{{ character.good_reason }}</p>
-                        <p class="orange-text">{{ character.bad_reason }}</p>
-                        <p class="orange-text">{{ character.first_published }}</p>
-                        <p class="orange-text">{{ character.first_aired }}</p>
                     </div>
                 </div>
             </div>

@@ -20,6 +20,10 @@ p, a {
     margin-top: 40px;
 }
 
+.card-img-top {
+    max-height: 10rem;
+}
+
 .margin-under {
     margin-bottom: 60px;
 }
@@ -40,19 +44,18 @@ p, a {
     background-color: rgb(255, 135, 0);
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: rgb(255, 135, 0);
-}
-
 .btn-primary {
     background-color: rgb(255, 135, 0);
     border-radius: 10px;
     border-color: rgb(125, 65, 0);
     color: black;
+}
+
+.btn-edit {
+    background-color: rgb(0, 217, 255);
+    border: 0;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
 }
 
 .btn-delete {
@@ -71,20 +74,25 @@ label {
     color: white;
 }
 
+.bio-bg {
+    background-color: white;
+    padding: 1rem;
+}
+
 .image-label {
     position: absolute;
     top: 5%;
     min-width: 30%;
-    left: -2px;
+    left: 0px;
     background-color: rgb(255, 135, 0);
     font-size: 200%;
 }
 
 .image-subtitle {
     position: absolute;
-    bottom: -1%;
+    bottom: 1%;
     min-width: 30%;
-    right: -2px;
+    right: 0px;
     background-color: rgb(255, 135, 0);
     font-size: 150%;
 }
