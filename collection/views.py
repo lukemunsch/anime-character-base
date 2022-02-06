@@ -67,7 +67,6 @@ class CharacterDetail(View):
             },
         )
 
-
-class CreateCharacterForm(forms.Form):
-    """set up the form input for the creation of a new character"""
-
+def character_form(generic):
+    """created page for our form to create new character"""
+    return render(request, 'create_character.html')
