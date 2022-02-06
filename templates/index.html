@@ -22,9 +22,9 @@
             <hr class="hr-orange" />
 
             <!-- visual list list of character cards -->
-            <div class="row">
+            <div class="row offset-md-1">
                 {% for character in character_list %}
-                <div class="col-sm-4 col-md-3 margin-under">
+                <div class="col-sm-4 col-md-2 margin-under">
                     <div class="card mb-4 rounded-corners card-shadow">
                         <div class="card-body">
                             <div class="image-container">
@@ -43,7 +43,7 @@
                             </div>
                             <hr />
                             <a href="{% url 'character_detail' character.slug %}" class="character-link">
-                                <button type="button" class="btn btn-primary">View Character</button>
+                                <button type="button" class="btn btn-primary">View Me!</button>
                             </a>
                             {% if user.is_superuser %}
                             <!-- bring up modal for confirmation -->
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:5 %}
             </div>
             <div class="row">
                 {% endif %}

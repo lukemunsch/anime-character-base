@@ -8,6 +8,7 @@ class Series(models.Model):
     """set up the series category"""
     id = models.IntegerField(primary_key=True)
     series_name = models.CharField(max_length=100, unique=True, null=False)
+    series_logo = CloudinaryField('image', default='placeholder')
     approved = models.BooleanField(default=0)
 
     class Meta:

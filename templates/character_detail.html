@@ -35,16 +35,21 @@
                         <p class="orange-text"><strong>First Aired -</strong> {{ character.first_aired }}</p>
                     </div>
                 </div>
-                <!-- main body of the character details -->
-                <div class="row">
-                    <div class="col-md-12 bio-bg mb-5">
-                        <p class="orange-text"><strong>Character Bio -</strong></p>
-                        <p class="orange-text">{{ character.bio | safe }}</p>
+            </div>
+        </div>
+        <!-- main body of the character details -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 mb-5">
+                    <div class="row">
+                        <div class="col-md-12 bio-bg mb-5">
+                            <p class="orange-text"><strong>Character Bio -</strong></p>
+                            <p class="orange-text">{{ character.bio | safe }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}
