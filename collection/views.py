@@ -67,6 +67,17 @@ class CharacterDetail(View):
             },
         )
 
-def character_form(generic):
-    """created page for our form to create new character"""
-    return render(request, 'create_character.html')
+class CreateCharacter(View):
+    """set up the request for posting a new character"""
+    def create_char(self, request):
+        """if the request is a post, populate the data from the request"""
+        if request.method == POST:
+            form = CreateCharacterForm(request.POST)
+            if form.is_valid():
+                return HttpResponseRedirect('create_character.html')
+
+    # if a GET (or any other method) we'll create a blank form
+        else:
+            form = CreateCharacterForm()
+        
+        return render(request, 'create_character.html', {'form': form})

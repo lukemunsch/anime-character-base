@@ -7,4 +7,4 @@ class CreateCharacterForm(forms.ModelForm):
     class Meta:
         """what we expect our form to include"""
         model = Character
-        fields = ('name', 'char_image', 'series_name', 'age', 'special', 'first_published', 'first_aired', 'good_reason', 'bad_reason', 'bio',)
+        fields = ('name', 'char_image', 'series_name', 'age', 'special', 'first_published', 'first_aired', 'good_reason', 'bad_reason', 'bio', 'status',)
