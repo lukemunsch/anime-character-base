@@ -1,7 +1,9 @@
 """Set up the view for our models"""
 from django.shortcuts import render, get_object_or_404, reverse
+from django import forms
 from django.views import generic, View
 from .models import Character, Series, Comment
+from .forms import CreateCharacterForm
 
 
 class CharacterList(generic.ListView):
@@ -64,3 +66,8 @@ class CharacterDetail(View):
                 "liked": liked
             },
         )
+
+
+class CreateCharacterForm(forms.Form):
+    """set up the form input for the creation of a new character"""
+

@@ -2,4 +2,77 @@
 
 {% block content %}
 
+<!-- page title area -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <h1 class="text-center orange-text mb-4"><strong>Animé <em>Series</em> Base</strong></h1>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <h5 class="text-center orange-text">This is a list of the Animé I have watched or shows people have
+                suggested to me.</h5>
+            <p class="text-center orange-text">Please browse through them and if you have a suggestion, please head over
+                to the 'Suggestions' page in Actions to let me know what you think is worth watching!</p>
+        </div>
+    </div>
+</div>
+<hr class="hr-orange" />
+
+<!-- creating the list of series cards -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="row offset-md-1">
+            {% for series in series_list %}
+            <div class="col-sm-4 col-md-2 margin-under">
+                <div class="card mb-4 rounded-corners card-shadow">
+                    <div class="card-body">
+                        <div class="image-container">
+                            {% if "placeholder" in series.series_logo.url %}
+                            <img class="card-img-top"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU">
+                            {% else %}
+                            <img class="card-img-top" src=" {{ series.series_logo.url }}">
+                            {% endif %}
+                            <div class="mt-2">
+                                <h5><strong>{{ series.series_name }}</strong></h5>
+                            </div>
+                        </div>
+                        {% if user.is_superuser %}
+                        <!-- bring up modal for confirmation -->
+                        <hr />
+                        <a href="#" class="character-edit">
+                            <button type="button" class="btn btn-edit">Edit</button>
+                        </a>
+                        <a href="#" class="character-delete">
+                            <button type="button" class="btn btn-delete">Delete</button>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:5 %}
+        </div>
+        <div class="row">
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+</div>
+
+
 {% endblock %}
