@@ -1,5 +1,5 @@
 """Set up the view for our models"""
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django import forms
 from django.views import generic, View
 from .models import Character, Series, Comment
@@ -45,13 +45,12 @@ class CreateCharacter(View):
     def create_char(self, request):
         """if the request is a post, populate the data from the request"""
         if request.method == 'POST':
-            char_form = CreateCharacterForm(data=request.POST)
+            char_form = CreateCharacterForm(request.POST)
             if char_form.is_valid():
-                char_form.instance.name = request.form.name
-                return f"Thank you for creating the Character {character.name}"
-            else:
-                char_form = CreateCharacter()
-        else:
-            form = CreateCharacterForm()
-        
-        return render(request, 'create_character.html', {'form': form})
+                char_form.save()
+                return redirect('create_char')
+        char_form = CreateCharacterForm()
+        context = {
+            'char_form': char_form
+        }
+        return render(request, 'create_character.html', context)
