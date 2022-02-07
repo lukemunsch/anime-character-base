@@ -35,7 +35,6 @@ class CharacterDetail(View):
             "character_detail.html",
             {
                 "character": character,
-                "commented": False,
             },
         )
 
@@ -48,9 +47,8 @@ class CreateCharacter(View):
             char_form = CreateCharacterForm(request.POST)
             if char_form.is_valid():
                 char_form.save()
-                return redirect('create_char')
+
+                return redirect('/')
+
         char_form = CreateCharacterForm()
-        context = {
-            'char_form': char_form
-        }
-        return render(request, 'create_character.html', context)
+        return render(request, 'create_character.html', {'char_form': char_form})
