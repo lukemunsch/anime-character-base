@@ -8,6 +8,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Acme', sans-serif, serif;
 }
 
+h1 {
+    font-size: 300%;
+}
+
 p, a {
     font-family: 'Almarai', sans-serif, serif;
 }

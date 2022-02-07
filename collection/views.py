@@ -39,44 +39,18 @@ class CharacterDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
-        """setting up the post for the comments"""
-        queryset = Character.objects.filter(status=1)
-        character = get_object_or_404(queryset, slug=slug)
-        comments = character.comments.filter(approved=True).order_by("-created_on")
-
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-        else:
-            comment_form = CommentForm()
-
-        return render(
-            request,
-            "character_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-                "liked": liked
-            },
-        )
 
 class CreateCharacter(View):
     """set up the request for posting a new character"""
     def create_char(self, request):
         """if the request is a post, populate the data from the request"""
-        if request.method == POST:
-            form = CreateCharacterForm(request.POST)
-            if form.is_valid():
-                return HttpResponseRedirect('create_character.html')
-
-    # if a GET (or any other method) we'll create a blank form
+        if request.method == 'POST':
+            char_form = CreateCharacterForm(data=request.POST)
+            if char_form.is_valid():
+                char_form.instance.name = request.form.name
+                return f"Thank you for creating the Character {character.name}"
+            else:
+                char_form = CreateCharacter()
         else:
             form = CreateCharacterForm()
         

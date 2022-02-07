@@ -63,7 +63,7 @@ class Comment(models.Model):
     def __str__(self):
         return f'{self.name} | {self.email} says:'
 
-    
+
 class Suggestion(models.Model):
     """sets up the model for user suggestions for me to add to my site"""
     char_sug = models.CharField(max_length=100, null=False)
