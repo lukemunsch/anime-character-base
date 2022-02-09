@@ -48,16 +48,16 @@ class CreateCharacterForm(forms.ModelForm):
             'good_reason': TextInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 500px;',
-                'placeholder': 'Special Abilities'
+                'placeholder': 'Positive Reason'
                 }),
             'bad_reason': TextInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 500px;',
-                'placeholder': 'Special Abilities'
+                'placeholder': 'Negative Reason'
                 }),
             'bio': Textarea(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 500px;',
-                'placeholder': 'Special Abilities'
+                'placeholder': 'Please Enter Your Biography Here'
             }),
         }

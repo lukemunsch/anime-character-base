@@ -6,13 +6,13 @@ from .models import Character, Series, Comment, Suggestion
 from .forms import CreateCharacterForm
 
 
-def create_character(request):
+def create_char(request):
     """processing our create character to render a view"""
     if request.method == "POST":
         char_form = CreateCharacterForm(request.POST)
         if char_form.is_valid():
             char_form.save()
-            return redirect('home')
+            return redirect('/')
     char_form = CreateCharacterForm()
     context = {
         'char_form': char_form
@@ -23,7 +23,7 @@ def create_character(request):
 class CharacterList(generic.ListView):
     """this is the display of our Character model"""
     model = Character
-    queryset = Character.objects.filter(status=1).order_by('-series_name')
+    queryset = Character.objects.filter(status=1).order_by('series_name')
     template_name = 'index.html'
     paginate_by = 8
 
