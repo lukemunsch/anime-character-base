@@ -6,12 +6,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div class="row">
-                <div class="col">
-                    <h1>Character Creation Page</h1>
-                </div>
-            </div>
+        <div class="col-12 mt-4">
+            <h1 class="orange-text text-center mb-4">Character Creation Page</h1>
         </div>
     </div>
     <div class="row">
@@ -21,9 +17,14 @@
     </div>
     <hr class="hr-orange" />
     <!-- form section -->
-    <div class="row">
-        <div class="col-md-6 ofset-md-3">
-            
+    <div class="row mb-5">
+        <div class="col-md-6 offset-md-3 orange-form mb-5">
+            <form method="POST" action="create_character">
+                {% csrf_token %}
+                {{ char_form }}
+                <!-- submit button -->
+                <div class="mb-5 huge-text"><button type="submit" class="btn-primary">Create Character NOW!!!</button></div>
+            </form>
         </div>
     </div>
 </div>

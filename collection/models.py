@@ -37,7 +37,7 @@ class Character(models.Model):
     bad_reason = models.CharField(default='', max_length=100)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=VIEW_CARD, default=0)
+    status = models.IntegerField(choices=VIEW_CARD, default=1)
 
     class Meta:
         """set up how we would like the cards to be ordered"""

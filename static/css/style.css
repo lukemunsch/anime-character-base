@@ -20,6 +20,10 @@ p, a {
     font-weight: 300;
 }
 
+.huge-text {
+    font-size: 200%;
+}
+
 .container-body {
     margin-top: 40px;
 }
@@ -46,6 +50,13 @@ p, a {
 
 .orange {
     background-color: rgb(255, 135, 0);
+}
+
+.orange-form {
+    border: 3px solid rgb(255, 135, 0);
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-left: 50px;
 }
 
 .btn-primary {

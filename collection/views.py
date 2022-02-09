@@ -2,8 +2,22 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django import forms
 from django.views import generic, View
-from .models import Character, Series, Comment
+from .models import Character, Series, Comment, Suggestion
 from .forms import CreateCharacterForm
+
+
+def create_character(request):
+    """processing our create character to render a view"""
+    if request.method == "POST":
+        char_form = CreateCharacterForm(request.POST)
+        if char_form.is_valid():
+            char_form.save()
+            return redirect('home')
+    char_form = CreateCharacterForm()
+    context = {
+        'char_form': char_form
+    }
+    return render(request, 'create_character.html', context)
 
 
 class CharacterList(generic.ListView):
@@ -37,18 +51,3 @@ class CharacterDetail(View):
                 "character": character,
             },
         )
-
-
-class CreateCharacter(View):
-    """set up the request for posting a new character"""
-    def create_char(self, request):
-        """if the request is a post, populate the data from the request"""
-        if request.method == 'POST':
-            char_form = CreateCharacterForm(request.POST)
-            if char_form.is_valid():
-                char_form.save()
-
-                return redirect('/')
-
-        char_form = CreateCharacterForm()
-        return render(request, 'create_character.html', {'char_form': char_form})
