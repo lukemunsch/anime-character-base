@@ -16,7 +16,22 @@
         </div>
     </div>
 </div>
+
+<!-- create new character and series buttons -->
+{% if user.is_superuser %}
+<div class="row">
+    <div class="col-md-4 offset-md-4 text-center">
+        <a href="{% url 'create_character' %}">
+            <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Character</button>
+        </a>
+        <a href="{% url 'create_series' %}">
+            <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Series</button>
+        </a>
+    </div>
+</div>
+{% endif %}
 <hr class="hr-orange" />
+
 
 <!-- creating the list of series cards -->
 

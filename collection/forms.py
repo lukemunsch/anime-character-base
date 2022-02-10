@@ -69,7 +69,7 @@ class CreateSeriesForm(forms.ModelForm):
     class Meta:
         """what it will reference"""
         model = Series
-        fields = ['series_name', 'series_logo', 'approved']
+        fields = ['series_name', 'series_logo',]
         widgets = {
             'series_name': TextInput(attrs={
                 'class': "form-control mb-4",
@@ -77,11 +77,6 @@ class CreateSeriesForm(forms.ModelForm):
                 'placeholder': 'Series Name'
                 }),
             'series_logo': FileInput(attrs={
-                'class': "form-control mb-4",
-                'style': 'max-width: 250px;',
-                'placeholder': 'Series Image'
-                }),
-            'Approved': CheckboxInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
                 'placeholder': 'Series Image'
