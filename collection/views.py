@@ -9,7 +9,7 @@ from .forms import CreateCharacterForm
 def create_char(request):
     """processing our create character to render a view"""
     if request.method == "POST":
-        char_form = CreateCharacterForm(request.POST)
+        char_form = CreateCharacterForm(request.POST, request.FILES)
         if char_form.is_valid():
             char_form.save()
         return redirect(reverse('home'))
