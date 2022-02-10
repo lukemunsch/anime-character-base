@@ -36,44 +36,43 @@
 <!-- creating the list of series cards -->
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="row offset-md-1">
-            {% for series in series_list %}
-            <div class="col-sm-4 col-md-2 margin-under">
-                <div class="card mb-4 rounded-corners card-shadow">
-                    <div class="card-body">
-                        <div class="image-container">
-                            {% if "placeholder" in series.series_logo.url %}
-                            <img class="card-img-top"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU">
-                            {% else %}
-                            <img class="card-img-top" src=" {{ series.series_logo.url }}">
-                            {% endif %}
-                            <div class="mt-2">
-                                <h5><strong>{{ series.series_name }}</strong></h5>
-                            </div>
-                        </div>
-                        {% if user.is_superuser %}
-                        <!-- bring up modal for confirmation -->
-                        <hr />
-                        <a href="#" class="character-edit">
-                            <button type="button" class="btn btn-edit">Edit</button>
-                        </a>
-                        <a href="#" class="character-delete">
-                            <button type="button" class="btn btn-delete">Delete</button>
-                        </a>
+    <div class="row offset-md-1">
+        {% for series in series_list %}
+        <div class="col-sm-4 col-md-2 margin-under">
+            <div class="card mb-4 rounded-corners card-shadow">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in series.series_logo.url %}
+                        <img class="card-img-top"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ series.series_logo.url }}">
                         {% endif %}
+                        <div class="mt-2">
+                            <h5><strong>{{ series.series_name }}</strong></h5>
+                        </div>
                     </div>
+                    {% if user.is_superuser %}
+                    <!-- bring up modal for confirmation -->
+                    <hr />
+                    <a href="#" class="character-edit">
+                        <button type="button" class="btn btn-edit">Edit</button>
+                    </a>
+                    <a href="#" class="character-delete">
+                        <button type="button" class="btn btn-delete">Delete</button>
+                    </a>
+                    {% endif %}
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:5 %}
         </div>
-        <div class="row">
-            {% endif %}
-            {% endfor %}
-
-        </div>
+        {% if forloop.counter|divisibleby:5 %}
     </div>
+    <div class="row offset-md-1">
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
 </div>
 {% if is_paginated %}
 <nav aria-label="Page navigation">

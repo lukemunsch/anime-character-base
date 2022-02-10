@@ -9,7 +9,7 @@ class Series(models.Model):
     """set up the series category"""
     series_name = models.CharField(max_length=100, unique=True, null=False)
     series_logo = CloudinaryField('image', default='placeholder')
-    approved = models.BooleanField(default=0)
+    approved = models.BooleanField(default=1)
 
     class Meta:
         """set up how they will appear on the screen"""
