@@ -1,6 +1,7 @@
 from django import forms
-from .models import Character, Series, Suggestion
 from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea
+from .models import Character, Series, Suggestion
+
 
 
 class CreateCharacterForm(forms.ModelForm):

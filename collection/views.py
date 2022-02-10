@@ -12,7 +12,7 @@ def create_char(request):
         char_form = CreateCharacterForm(request.POST)
         if char_form.is_valid():
             char_form.save()
-            return redirect('/')
+        return redirect(reverse('home'))
     char_form = CreateCharacterForm()
     context = {
         'char_form': char_form
@@ -42,7 +42,6 @@ class CharacterDetail(View):
         """retrieving from the database"""
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
-        
 
         return render(
             request,
