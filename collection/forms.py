@@ -90,3 +90,20 @@ class CreateSuggestionForm(forms.ModelForm):
         """how I would like the form to look"""
         model = Suggestion
         fields = ['char_sug', 'series_sug', 'reason']
+        widgets = {
+            'char_sug': TextInput(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Character Suggestion'
+                }),
+            'series_name': TextInput(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Series Suggestion'
+                }),
+            'bio': Textarea(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 500px;',
+                'placeholder': 'Why would you recommend this?'
+            }),
+        }
