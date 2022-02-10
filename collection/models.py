@@ -20,6 +20,8 @@ class Series(models.Model):
 
 
 VIEW_CARD = ((0, 'Hidden'), (1, 'Displayed'))
+SUG_TYPE = ((0, "character"), (1, "series"))
+
 
 
 class Character(models.Model):
@@ -55,8 +57,8 @@ class Character(models.Model):
 class Comment(models.Model):
     """setting up the comment model under the bios"""
     character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='comment')
-    name = models.CharField(default='name', max_length=20, null=False)
-    email = models.EmailField(default='e@mail.com', max_length=100)
+    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="users_name")
+    email = models.ForeignKey(User, on_delete=models.CASCADE, related_name="email_address")
     body = models.TextField(default='', max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -69,8 +71,10 @@ class Comment(models.Model):
         return f'{self.name} | {self.email} says:'
 
 
+
 class Suggestion(models.Model):
     """sets up the model for user suggestions for me to add to my site"""
+    sug_type = models.IntegerField(choices=SUG_TYPE, default=1)
     char_sug = models.CharField(max_length=100, null=True)
     series_sug = models.CharField(max_length=100, null=False)
     reason = models.CharField(max_length=100, null=False)
