@@ -39,7 +39,7 @@ class CharacterList(generic.ListView):
     model = Character
     queryset = Character.objects.filter(status=1).order_by('series_name', 'name')
     template_name = 'index.html'
-    paginate_by = 16
+    paginate_by = 12
 
 
 class SeriesList(generic.ListView):
@@ -47,7 +47,7 @@ class SeriesList(generic.ListView):
     model = Series
     queryset = Series.objects.order_by('series_name')
     template_name = 'series_list.html'
-    paginate_by = 20
+    paginate_by = 15
 
 
 class CharacterDetail(View):

@@ -71,7 +71,7 @@ class Comment(models.Model):
 
 class Suggestion(models.Model):
     """sets up the model for user suggestions for me to add to my site"""
-    char_sug = models.CharField(max_length=100, null=False)
+    char_sug = models.CharField(max_length=100, null=True)
     series_sug = models.CharField(max_length=100, null=False)
     reason = models.CharField(max_length=100, null=False)
     created_when = models.DateTimeField(auto_now_add=True)
