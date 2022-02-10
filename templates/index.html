@@ -19,6 +19,15 @@
                 </h5>
             </div>
             <hr class="hr-orange" />
+            {% if user.is_superuser %}
+            <div class="row">
+                <div class="col-md-4 offset-md-4 text-center">
+                    <a href="{% url 'create_character' %}">
+                        <button class="btn btn-primary mt-3 mb-5">Add New Character</button>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
 
             <!-- visual list list of character cards -->
             <div class="row offset-md-1">
