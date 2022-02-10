@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <h1 class="orange-text text-center mb-4">Series Creation Page</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h5 class="orange-text text-center">Please create the new series using the form below : -</h5>
+        </div>
+    </div>
+    <hr class="hr-orange" />
+
+    <!-- form section -->
+    <div class="row mb-5">
+        <div class="col-md-6 offset-md-3 orange-form mb-5">
+            <form method="POST" action="{% url 'create_series' %}">
+                {% csrf_token %}
+                {{ series_form }}
+                <!-- submit button -->
+                <div class="mb-5 huge-text">
+                    <p>
+                        <button type="submit" class="text-center btn-primary">Create Series NOW!!!</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

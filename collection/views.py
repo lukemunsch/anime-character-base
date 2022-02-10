@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django import forms
 from django.views import generic, View
 from .models import Character, Series, Comment, Suggestion
-from .forms import CreateCharacterForm
+from .forms import CreateCharacterForm, CreateSeriesForm
 
 
 def create_char(request):
@@ -18,6 +18,20 @@ def create_char(request):
         'char_form': char_form
     }
     return render(request, 'create_character.html', context)
+
+
+def create_series(request):
+    """processing how our create series page renders"""
+    if request.method == "POST":
+        series_form = CreateSeriesForm(request.POST, request.FILES)
+        if series_form.is_valid():
+            series_form.save()
+        return redirect(reverse('series_list'))
+    series_form = CreateSeriesForm()
+    context = {
+        'series_form': series_form
+    }
+    return render(request, 'create_series.html', context)
 
 
 class CharacterList(generic.ListView):

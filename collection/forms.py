@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea
+from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea, CheckboxInput
 from .models import Character, Series, Suggestion
 
 
@@ -61,4 +61,29 @@ class CreateCharacterForm(forms.ModelForm):
                 'style': 'max-width: 500px;',
                 'placeholder': 'Please Enter Your Biography Here'
             }),
+        }
+
+
+class CreateSeriesForm(forms.ModelForm):
+    """setting up my form to add new series to the db"""
+    class Meta:
+        """what it will reference"""
+        model = Series
+        fields = ['series_name', 'series_logo', 'approved']
+        widgets = {
+            'series_name': TextInput(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Series Name'
+                }),
+            'series_logo': FileInput(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Series Image'
+                }),
+            'Approved': CheckboxInput(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Series Image'
+                }),
         }
