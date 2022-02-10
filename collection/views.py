@@ -37,17 +37,17 @@ def create_series(request):
 class CharacterList(generic.ListView):
     """this is the display of our Character model"""
     model = Character
-    queryset = Character.objects.filter(status=1).order_by('series_name')
+    queryset = Character.objects.filter(status=1).order_by('series_name', 'name')
     template_name = 'index.html'
-    paginate_by = 8
+    paginate_by = 16
 
 
 class SeriesList(generic.ListView):
     """This is to display the list of series I have added to my db"""
     model = Series
-    queryset = Series.objects.filter(approved=1).order_by('series_name')
+    queryset = Series.objects.order_by('series_name')
     template_name = 'series_list.html'
-    paginate_by = 10
+    paginate_by = 20
 
 
 class CharacterDetail(View):

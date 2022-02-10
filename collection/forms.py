@@ -69,7 +69,7 @@ class CreateSeriesForm(forms.ModelForm):
     class Meta:
         """what it will reference"""
         model = Series
-        fields = ['series_name', 'series_logo',]
+        fields = ['series_name', 'series_logo']
         widgets = {
             'series_name': TextInput(attrs={
                 'class': "form-control mb-4",
@@ -82,3 +82,11 @@ class CreateSeriesForm(forms.ModelForm):
                 'placeholder': 'Series Image'
                 }),
         }
+
+
+class CreateSuggestionForm(forms.ModelForm):
+    """create a form for people to send me suggestions"""
+    class Meta:
+        """how I would like the form to look"""
+        model = Suggestion
+        fields = ['char_sug', 'series_sug', 'reason']

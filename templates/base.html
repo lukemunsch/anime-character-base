@@ -45,19 +45,15 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">Home </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'series_list' %}">Series List </a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Your Actions
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">See Suggestions</a>
-                            <a class="dropdown-item" href="{% url 'series_list' %}">Series List</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">See Suggestions</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -71,11 +67,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Admin
+                            Admin Tools
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'create_character' %}">Create New Character</a>
-                            <a class="dropdown-item" href="#">See Suggestions</a>
                             <a class="dropdown-item" href="{% url 'create_series' %}">Create New Series</a>
                         </div>
                     </li>
@@ -107,8 +102,6 @@
 
         <!-- footer element here -->
         <footer class="page-footer font-small orange fixed-bottom">
-
-            <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
                 <span>This is a fan-made site</span>
                 <strong>| Created by MunschyProducts 😄🍫</strong>

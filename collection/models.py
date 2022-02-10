@@ -74,7 +74,6 @@ class Suggestion(models.Model):
     char_sug = models.CharField(max_length=100, null=False)
     series_sug = models.CharField(max_length=100, null=False)
     reason = models.CharField(max_length=100, null=False)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="name")
     created_when = models.DateTimeField(auto_now_add=True)
 
     class Meta:

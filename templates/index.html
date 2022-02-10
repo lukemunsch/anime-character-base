@@ -7,7 +7,7 @@
     <div class="row">
 
         <!-- Character Entries Column -->
-        <div class="col-12 mt-4">
+        <div class="col-12 mt-4 mb-4">
             <h1 class="text-center orange-text mb-4"><strong>Animé Character Base</strong></h1>
             <div class="col-md-6 offset-md-3">
                 <h5 class="text-center orange-text">
@@ -18,23 +18,24 @@
                         href="{% url 'account_signup' %}">sign up</a> and send me a suggestion!
                 </h5>
             </div>
-            <hr class="hr-orange" />
-
             <!-- add character and series button for superusers only -->
             {% if user.is_superuser %}
             <div class="row">
                 <div class="col-md-4 offset-md-4 text-center">
                     <a href="{% url 'create_character' %}">
-                        <button class="btn btn-primary mt-3 mb-5 mr-3">Add New Character</button>
+                        <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Character</button>
                     </a>
                     <a href="{% url 'create_series' %}">
-                        <button class="btn btn-primary mt-3 mb-5 mr-3">Add New Series</button>
+                        <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Series</button>
                     </a>
                 </div>
             </div>
+            <hr class="hr-orange mb-2 mt-2" />
             {% endif %}
         </div>
         
+
+
 
         <!-- visual list list of character cards -->
         <div class="row offset-md-1">
@@ -86,16 +87,23 @@
     </div>
 </div>
 {% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        {% endif %}
-    </ul>
-</nav>
-{% endif %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div>
+            <nav class="mb-6" aria-label="Page navigation">
+                <ul class="pagination justify-content-center mb-6">
+                    {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a>
+                    </li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <hr class="hr-orange mt-5" />
 </div>
+{% endif %}
 {%endblock%}
