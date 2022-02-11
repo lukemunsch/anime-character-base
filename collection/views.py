@@ -1,11 +1,8 @@
 """Set up the view for our models"""
-import os
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django import forms
 from django.views import generic, View
+from django.views.generic import CreateView
 from .models import Character, Series, Comment, Suggestion
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm
 
@@ -24,6 +21,12 @@ def create_char(request):
     return render(request, 'create_character.html', context)
 
 
+class AddSeriesView(CreateView):
+    """creating a view for my form"""
+    model = Series
+    form_class = CreateSeriesForm
+    template_name = 'create_series.html'
+
 def create_series(request):
     """processing how our create series page renders"""
     if request.method == "POST":
@@ -36,7 +39,6 @@ def create_series(request):
         'series_form': series_form
     }
     return render(request, 'create_series.html', context)
-    
 
 
 def create_sug(request):
@@ -68,6 +70,10 @@ class SeriesList(generic.ListView):
     paginate_by = 15
 
 
+class Suggestionlist(generic.ListView):
+    """"""
+
+
 class CharacterDetail(View):
     """creating he view for our character's main pages"""
     def get(self, request, slug, *args, **kwargs):
@@ -82,6 +88,3 @@ class CharacterDetail(View):
                 "character": character,
             },
         )
-
-
-

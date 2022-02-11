@@ -12,20 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-
-# configuring the cloudinary ability to store files
-cloudinary.config(
-    cloud_name=os.environ.get("cloud_name"),
-    api_key=os.environ.get("api_key"),
-    api_secret=os.environ.get("api_secret")
-)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
