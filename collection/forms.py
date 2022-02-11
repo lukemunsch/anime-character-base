@@ -89,8 +89,13 @@ class CreateSuggestionForm(forms.ModelForm):
     class Meta:
         """how I would like the form to look"""
         model = Suggestion
-        fields = ['char_sug', 'series_sug', 'reason']
+        fields = ['sug_type', 'char_sug', 'series_sug', 'reason']
         widgets = {
+            'sug_type': Select(attrs={
+                'class': "form-control mb-4",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Suggestion for a :'
+            }),
             'char_sug': TextInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',

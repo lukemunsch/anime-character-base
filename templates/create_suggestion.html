@@ -21,7 +21,25 @@
     <!-- display for the list of suggestions from other people -->
     <div class="row">
         <div class="col-md-8 offset-md-2">
-
+            {% for sug in suggestions %}
+            <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          {% if suggestion.sug_type == 0 %}
+                        {{ suggestion.char_sug }} | {{ suggestion.char_sug }}
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      {{ suggestion.reason }}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
         </div>
     </div>
 

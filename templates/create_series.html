@@ -22,8 +22,9 @@
     <!-- form section -->
     <div class="row mb-5">
         <div class="col-md-6 offset-md-3 orange-form mb-5">
-            <form method="POST" action="{% url 'create_series' %}">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
+                {{ series_form.media }}
                 {{ series_form.as_p }}
                 <!-- submit button -->
                 <div class="mb-5 huge-text">
