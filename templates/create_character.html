@@ -22,7 +22,7 @@
         <div class="col-8 offset-2 col-md-6 offset-md-3 orange-form mb-5">
             <form method="POST" action="{% url 'create_character' %}">
                 {% csrf_token %}
-                {{ char_form }}
+                {{ char_form.as_p }}
                 <!-- submit button -->
                 <div class="mb-5 huge-text">
                     <p>

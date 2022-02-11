@@ -12,17 +12,25 @@
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h5 class="orange-text text-center">Please feel free to send me any suggestions you might have for shows to watch : -</h5>
+            <h5 class="orange-text text-center">Check through the list of suggestions from other people, but if you have
+                another, please complete the form at the bottom of the page : -</h5>
         </div>
     </div>
     <hr class="hr-orange" />
+
+    <!-- display for the list of suggestions from other people -->
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+        </div>
+    </div>
 
     <!-- form section -->
     <div class="row mb-5">
         <div class="col-md-6 offset-md-3 orange-form mb-5">
             <form method="POST" action="{% url 'create_suggestion' %}">
                 {% csrf_token %}
-                {{ sug_form }}
+                {{ sug_form.as_p | safe }}
                 <!-- submit button -->
                 <div class="mb-5 huge-text">
                     <p>
