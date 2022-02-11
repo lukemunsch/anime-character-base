@@ -30,25 +30,11 @@ def create_series(request):
         series_form = CreateSeriesForm(request.POST, request.FILES)
         if series_form.is_valid():
             series_form.save()
-            if form.cleaned_data['images']:
-                image = request.FILES.getlist('image')
-                upload_image(image_url=settings.MEDIA_URL + image.name)
         return redirect(reverse('series_list'))
     series_form = CreateSeriesForm()
     context = {
         'series_form': series_form
     }
-    
-    def upload_image(url):
-        """set up how to process image upload to clouinary"""
-        cdn = cloudinary.uploader.upload(
-            url,
-            folder='collection',
-            width=250,
-            gravity='auto',
-            use_filename=True
-        )
-        return cdn['secure_url']
     return render(request, 'create_series.html', context)
     
 

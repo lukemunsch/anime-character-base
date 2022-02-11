@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-4">
-            <h1 class="orange-text text-center mb-4">Character Creation Page</h1>
+            <h1 class="orange-text justify-content-center mb-4">Character Creation Page</h1>
         </div>
     </div>
     <div class="row">
@@ -19,7 +19,7 @@
 
     <!-- form section -->
     <div class="row mb-5">
-        <div class="col-md-6 offset-md-3 orange-form mb-5">
+        <div class="col-8 offset-2 col-md-6 offset-md-3 orange-form mb-5">
             <form method="POST" action="{% url 'create_character' %}">
                 {% csrf_token %}
                 {{ char_form }}

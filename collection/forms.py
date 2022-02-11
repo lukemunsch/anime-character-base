@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea, CheckboxInput
+from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea
 from .models import Character, Series, Suggestion
 
 
@@ -96,13 +96,13 @@ class CreateSuggestionForm(forms.ModelForm):
                 'style': 'max-width: 250px;',
                 'placeholder': 'Character Suggestion'
                 }),
-            'series_name': TextInput(attrs={
+            'series_sug': TextInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
                 'placeholder': 'Series Suggestion'
                 }),
-            'bio': Textarea(attrs={
-                'class': "form-control mb-4",
+            'reason': Textarea(attrs={
+                'class': "form-control mb-4 orange-text",
                 'style': 'max-width: 500px;',
                 'placeholder': 'Why would you recommend this?'
             }),
