@@ -20,7 +20,7 @@ class Series(models.Model):
 
 
 VIEW_CARD = ((0, 'Hidden'), (1, 'Displayed'))
-SUG_TYPE = ((0, "character"), (1, "series"))
+SUG_TYPE = ((0, "Character"), (1, "Series"))
 
 
 

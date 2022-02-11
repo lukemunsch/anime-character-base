@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <h5 class="orange-text text-center">Check through the list of suggestions from other people, but if you have
-                another, please complete the form at the bottom of the page : -</h5>
+                another suggestion, please click the button below to fill out a form : -</h5>
         </div>
     </div>
     <hr class="hr-orange" />
@@ -28,11 +28,11 @@
                         <h5 class="mb-0">
                             <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
-                            {% if suggestion.sug_type == 0 %}
-                                {{ suggestion.char_sug }} | {{ suggestion.series_sug }}
-                            {% else %}
-                                {{ suggestion.series_sug }}
-                            {% endif %}
+                                {% if sug.sug_type == 0 %}
+                                {{ sug.char_sug }} | {{ sug.series_sug }}
+                                {% else %}
+                                {{ sug.series_sug }}
+                                {% endif %}
                             </button>
                         </h5>
                     </div>
@@ -47,21 +47,4 @@
             </div>
         </div>
 
-        <!-- form section -->
-        <div class="row mb-5">
-            <div class="col-md-6 offset-md-3 orange-form mb-5">
-                <form method="POST" action="{% url 'create_suggestion' %}">
-                    {% csrf_token %}
-                    {{ sug_form.as_p | safe }}
-                    <!-- submit button -->
-                    <div class="mb-5 huge-text">
-                        <p>
-                            <button type="submit" class="text-center btn-primary">Add suggestion now</button>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    {% endblock %}
+        {% endblock %}
