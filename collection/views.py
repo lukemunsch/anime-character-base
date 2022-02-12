@@ -19,19 +19,20 @@ def create_char(request):
     return render(request, 'create_character.html', context)
 
 
-def edit_char(request, char_id):
+def edit_char(request, slug):
     """process how to delete a character"""
-    char = get_object_or_404(Character, id=char_id)
+    char = get_object_or_404(Character, slug=slug)
     if request.method == "POST":
         char_form = CreateCharacterForm(request.POST, request.FILES, instance=char)
         if char_form.is_valid():
             char_form.save()
-        return redirect(reverse('home'))
+            return redirect(reverse('home'))
     char_form = CreateCharacterForm(instance=char)
     context = {
         'char_form': char_form
     }
     return render(request, 'edit_character.html', context)
+
 
 def create_series(request):
     """processing how our create series page renders"""

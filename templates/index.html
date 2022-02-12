@@ -38,7 +38,7 @@
 
 
         <!-- visual list list of character cards -->
-        <div class="row offset-md-1">
+        <div class="row offset-md-0 offset-lg-1">
             {% for character in character_list %}
             <div class="col-md-4 col-lg-2 margin-under">
                 <div class="card mb-4 rounded-corners card-shadow">
@@ -62,9 +62,8 @@
                             <button type="button" class="btn btn-primary">View Me!</button>
                         </a>
                         {% if user.is_superuser %}
-                        <!-- bring up modal for confirmation -->
                         <hr />
-                        <a href="{% url 'edit_character' char_id %}" class="character-edit">
+                        <a href="{% url 'edit_char' character.slug %}" class="character-edit">
                             <button type="button" class="btn btn-edit">Edit</button>
                         </a>
                         <a href="#" class="character-delete">

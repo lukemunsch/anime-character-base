@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h1 class="orange-text mt-3"><strong>Delete This Character?</strong></h1>
+      <h3 class="orange-text mt-3">Just to confirm - Once you have clicked delete, the character will be irreversibly
+        deleted</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <p class="orange-text mt-3">Are you sure?</p>
+        <a href="{% url 'home' %}">
+          <button class="btn btn-primary">Cancel</button>
+        </a>
+        <a href="{% url 'home' %}">
+          <button class="btn btn-delete">Delete</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
