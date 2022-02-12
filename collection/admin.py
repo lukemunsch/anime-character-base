@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Series, Character, Comment
+from .models import Series, Character, Comment, Suggestion
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -28,10 +28,18 @@ class SeriesAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """set up our admin page for Comments"""
-    list_display = ('name', 'character', 'created_on', 'approved')
+    list_display = ('name', 'character', 'created_on', 'approved',)
     list_filter = ('approved',)
     search_fields = ['character', 'name', 'email', 'body']
     actions = ['approve_comment']
 
     def approve_comment(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Suggestion)
+class SuggestionAdmin(admin.ModelAdmin):
+    """setting up my Suggestion admin to montior creation progress"""
+    list_display = ('sug_type', 'char_sug', 'series_sug', 'created_when',)
+    list_filter = ('sug_type',)
+    search_fields = ['char_sug', 'series_sug']

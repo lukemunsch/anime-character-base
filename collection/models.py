@@ -20,8 +20,6 @@ class Series(models.Model):
 
 
 VIEW_CARD = ((0, 'Hidden'), (1, 'Displayed'))
-SUG_TYPE = ((0, "Character"), (1, "Series"))
-
 
 
 class Character(models.Model):
@@ -71,6 +69,8 @@ class Comment(models.Model):
         return f'{self.name} | {self.email} says:'
 
 
+SUG_TYPE = ((0, "Character"), (1, "Series"))
+
 
 class Suggestion(models.Model):
     """sets up the model for user suggestions for me to add to my site"""
@@ -85,4 +85,4 @@ class Suggestion(models.Model):
         ordering = ['created_when']
 
     def __str__(self):
-        return self.char_sug
+        return f'{self.sug_type} | {self.created_when}'

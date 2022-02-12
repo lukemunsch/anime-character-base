@@ -2,8 +2,6 @@
 
 {% block content %}
 
-{% load crispy_forms_tags %}
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-4">
@@ -16,35 +14,63 @@
                 another suggestion, please click the button below to fill out a form : -</h5>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <a href="{% url 'create_suggestion' %}">
+                <button class="btn btn-primary">Add a Suggestion</button>
+            </a>
+        </div>
+    </div>
     <hr class="hr-orange" />
 
     <!-- display for the list of suggestions from other people -->
     <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for sug in suggestions %}
+        <div class="col-md-8 offset-md-2 mb-5">
             <div id="accordion">
+                {% for suggestion in suggestion_list %}
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne"
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
-                                {% if sug.sug_type == 0 %}
-                                {{ sug.char_sug }} | {{ sug.series_sug }}
+                                {% if suggestion.sug_type == 0 %}
+                                <strong>{{ suggestion.char_sug }}</strong> from {{ suggestion.series_sug }}
                                 {% else %}
-                                {{ sug.series_sug }}
+                                <strong>{{ suggestion.series_sug }}</strong>
                                 {% endif %}
                             </button>
                         </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            {{ suggestion.reason }}
+                            {{ suggestion.reason}}
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-
-        {% endblock %}
+    </div>
+    {% if is_paginated %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <nav class="mb-6" aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mb-6">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a>
+                        </li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr class="hr-orange mt-5" />
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

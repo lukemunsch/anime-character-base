@@ -12,40 +12,10 @@
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h5 class="orange-text text-center">Check through the list of suggestions from other people, but if you have
-                another, please complete the form at the bottom of the page : -</h5>
+            <h5 class="orange-text text-center">If you feel like my AnimEducation is lacking, please send me a suggestion : -</h5>
         </div>
     </div>
     <hr class="hr-orange" />
-
-    <!-- display for the list of suggestions from other people -->
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for sug in suggestions %}
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                            {% if suggestion.sug_type == 0 %}
-                                {{ suggestion.char_sug }} | {{ suggestion.series_sug }}
-                            {% else %}
-                                {{ suggestion.series_sug }}
-                            {% endif %}
-                            </button>
-                        </h5>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            {{ suggestion.reason }}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
 
         <!-- form section -->
         <div class="row mb-5">
