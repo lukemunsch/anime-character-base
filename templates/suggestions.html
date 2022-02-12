@@ -29,20 +29,27 @@
             <div id="accordion">
                 {% for suggestion in suggestion_list %}
                 <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header blue" id="heading-{{ sug_type }}-{{ series_sug }}-{{ char_sug }}">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn list-link" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="false" aria-controls="collapseOne">
                                 {% if suggestion.sug_type == 0 %}
                                 <strong>{{ suggestion.char_sug }}</strong> from {{ suggestion.series_sug }}
                                 {% else %}
                                 <strong>{{ suggestion.series_sug }}</strong>
                                 {% endif %}
+                                {% if user.is_superuser %}
+                                <span>
+                                    <a href="#">
+                                        <button class="btn btn-delete">Delete</button>
+                                    </a>
+                                </span>
+                                {% endif %}
                             </button>
                         </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse" aria-labelledby="heading-{{ sug_type }}-{{ series_sug }}-{{ char_sug }}" data-parent="#accordion">
                         <div class="card-body">
                             {{ suggestion.reason}}
                         </div>

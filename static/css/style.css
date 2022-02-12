@@ -40,6 +40,10 @@ p, a {
     color: rgb(255, 135, 0);
 }
 
+.blue-text {
+    color: rgb(87, 160, 255);
+}
+
 .new-link {
     color: rgb(107, 181, 255);
 }
@@ -50,6 +54,10 @@ p, a {
 
 .orange {
     background-color: rgb(255, 135, 0);
+}
+
+.blue {
+    background-color: blue;
 }
 
 .orange-form {
@@ -83,6 +91,12 @@ p, a {
 .hr-orange {
     background-color: rgb(255, 135, 0);
     height: 1px;
+}
+
+.list-link {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
 }
 
 label {

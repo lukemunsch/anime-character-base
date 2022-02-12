@@ -42,4 +42,4 @@ class SuggestionAdmin(admin.ModelAdmin):
     """setting up my Suggestion admin to montior creation progress"""
     list_display = ('sug_type', 'char_sug', 'series_sug', 'created_when',)
     list_filter = ('sug_type',)
-    search_fields = ['char_sug', 'series_sug']
+    search_fields = ['series_sug', 'char_sug']

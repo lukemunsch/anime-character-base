@@ -7,12 +7,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-4">
-            <h1 class="orange-text justify-content-center mb-4">Character Creation Page</h1>
+            <h1 class="orange-text justify-content-center mb-4">Character Edit Page</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h5 class="orange-text text-center">Please create the new character using the form below : -</h5>
+            <h5 class="orange-text text-center">Please edit character using the form below : -</h5>
         </div>
     </div>
     <hr class="hr-orange" />
@@ -22,12 +22,11 @@
         <div class="col-8 offset-2 col-md-6 offset-md-3 orange-form mb-5">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ char_form.media }}
                 {{ char_form.as_p }}
                 <!-- submit button -->
                 <div class="mb-5 huge-text">
                     <p>
-                        <button type="submit" class="text-center btn-primary">Create Character NOW!!!</button>
+                        <button type="submit" class="text-center btn-primary">Update Character!!!</button>
                     </p>
                 </div>
             </form>

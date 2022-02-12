@@ -64,7 +64,7 @@
                         {% if user.is_superuser %}
                         <!-- bring up modal for confirmation -->
                         <hr />
-                        <a href="#" class="character-edit">
+                        <a href="{% url 'edit_character' char_id %}" class="character-edit">
                             <button type="button" class="btn btn-edit">Edit</button>
                         </a>
                         <a href="#" class="character-delete">
