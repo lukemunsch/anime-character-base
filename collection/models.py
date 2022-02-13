@@ -8,7 +8,6 @@ from cloudinary.models import CloudinaryField
 class Series(models.Model):
     """set up the series category"""
     series_name = models.CharField(max_length=100, unique=True, null=False)
-    series_slug = models.SlugField(max_length=100, unique=True)
     series_logo = CloudinaryField('image', default='placeholder')
     approved = models.BooleanField(default=1)
 
@@ -18,11 +17,6 @@ class Series(models.Model):
 
     def __str__(self):
         return self.series_name
-
-    def save(self, *args, **kwargs):
-        if not self.series_slug:
-            self.series_slug = slugify({self.series_name})
-        return super().save(*args, **kwargs)
 
 
 VIEW_CARD = ((0, 'Hidden'), (1, 'Displayed'))

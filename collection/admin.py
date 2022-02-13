@@ -17,7 +17,6 @@ class CharacterAdmin(SummernoteModelAdmin):
 @admin.register(Series)
 class SeriesAdmin(admin.ModelAdmin):
     """set up admin page for Series"""
-    prepopulated_fields = {'series_slug': ('series_name',)}
     list_display = ('series_name', 'approved',)
     list_filter = ('approved',)
     actions = ['approve_series']
