@@ -55,10 +55,10 @@
                     {% if user.is_superuser %}
                     <!-- bring up modal for confirmation -->
                     <hr />
-                    <a href="#" class="character-edit">
+                    <a href="{% url 'edit_series' series.id %}" class="series-edit">
                         <button type="button" class="btn btn-edit">Edit</button>
                     </a>
-                    <a href="#" class="character-delete">
+                    <a href="{% url 'delete_series' series.id %}" class="series-delete">
                         <button type="button" class="btn btn-delete">Delete</button>
                     </a>
                     {% endif %}

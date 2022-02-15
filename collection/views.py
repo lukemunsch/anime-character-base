@@ -48,6 +48,27 @@ def create_series(request):
     return render(request, 'create_series.html', context)
 
 
+def edit_series(request, series_id):
+    """processing how we want to edit our series"""
+    series = get_object_or_404(Series, id=series_id)
+    if request.method == "POST":
+        series_form = CreateSeriesForm(request.POST, request.FILES, instance=series)
+        if series_form.is_valid():
+            form.save()
+            return redirect(reverse('series_list'))
+    series_form = CreateSeriesForm(instance=series)
+    context = {
+        'series_form': series_form
+    }
+    return render(request, 'edit_series.html', context)
+
+
+def delete_series_req(request, series_id):
+    """processing how to delete a series"""
+    series = get_object_or_404(Series, id=series_id)
+    return render(request, 'delete_series.html')
+
+
 class SuggestionList(generic.ListView):
     """this is the display of our Character model"""
     model = Suggestion
