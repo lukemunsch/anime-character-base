@@ -93,6 +93,10 @@ p, a {
     height: 1px;
 }
 
+.query-confirm {
+    font-size: 150%;
+}
+
 .list-link {
     text-decoration: none;
     text-transform: capitalize;

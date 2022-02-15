@@ -54,7 +54,7 @@ def edit_series(request, series_id):
     if request.method == "POST":
         series_form = CreateSeriesForm(request.POST, request.FILES, instance=series)
         if series_form.is_valid():
-            form.save()
+            series_form.save()
             return redirect(reverse('series_list'))
     series_form = CreateSeriesForm(instance=series)
     context = {
@@ -80,6 +80,13 @@ class SuggestionList(generic.ListView):
     queryset = Suggestion.objects.order_by('series_sug', 'char_sug')
     template_name = 'suggestions.html'
     paginate_by = 12
+
+
+def delete_sug(request, sug_id):
+    """set up the deletion of suggestions from our list"""
+    suggest = get_object_or_404(Suggestion, id=sug_id)
+    suggest.delete()
+    return redirect('suggestions')
 
 
 def create_sug(request):
@@ -111,10 +118,6 @@ class SeriesList(generic.ListView):
     queryset = Series.objects.order_by('series_name')
     template_name = 'series_list.html'
     paginate_by = 15
-
-
-class Suggestionlist(generic.ListView):
-    """"""
 
 
 class CharacterDetail(View):
