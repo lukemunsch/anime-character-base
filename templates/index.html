@@ -61,10 +61,10 @@
                         {% if user.is_superuser %}
                         <hr />
                         <a href="{% url 'edit_char' character.slug %}" class="character-edit">
-                            <button type="button" class="btn btn-edit">Edit</button>
+                            <button type="button" class="btn btn-edit mr-3"><i class="fas fa-edit"></i></button>
                         </a>
-                        <a href="#" class="character-delete">
-                            <button type="button" class="btn btn-delete">Delete</button>
+                        <a href="{% url 'delete_char' character.slug %}" class="character-delete">
+                            <button type="button" class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </a>
                         {% endif %}
                         <hr />

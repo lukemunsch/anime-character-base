@@ -15,7 +15,7 @@
     <div class="col-10 offset-1 col-md-6 offset-md-3 orange-form mb-5">
       <form method="post">
         {% csrf_token %}
-        <p class="orange-text mt-3 query-confirm">Are you REALLY sure you want to delete this series? {{ series.series_name }}</p>
+        <p class="orange-text mt-3 query-confirm">Are you REALLY sure you want to delete this series?</p>
         <div class="mb-5">
           <a href="{% url 'series_list' %}">
             <button class="btn btn-primary mr-3">Cancel</button>

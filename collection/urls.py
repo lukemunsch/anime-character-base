@@ -9,6 +9,7 @@ urlpatterns = [
     path('delete_series/<id>/', views.delete_series, name='delete_series'),
     path('create_character/', views.create_char, name='create_character'),
     path('edit_char/<slug:slug>/', views.edit_char, name='edit_char'),
+    path('delete_character/<slug:slug>', views.delete_char, name='delete_char'),
     path('create_series/', views.create_series, name='create_series'),
     path('create_suggestion/', views.create_sug, name='create_suggestion'),
     path('delete_sug/<sug_id>/', views.delete_sug, name='delete_suggestion'),

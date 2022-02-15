@@ -43,7 +43,7 @@
                                 {% if user.is_superuser %}
                                 <span>
                                     <a href="{% url 'delete_suggestion' suggestion.id %}">
-                                        <button class="btn btn-delete">Delete</button>
+                                        <button class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                                     </a>
                                 </span>
                                 {% endif %}

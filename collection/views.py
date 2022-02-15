@@ -34,6 +34,17 @@ def edit_char(request, slug):
     return render(request, 'edit_character.html', context)
 
 
+def delete_char(request, slug):
+    """process how we delete a character"""
+    context = {}
+    character = get_object_or_404(Character, slug=slug)
+
+    if request.method == "POST":
+        character.delete()
+        return redirect(reverse('home'))
+    return render(request, 'delete_character.html', context)
+
+
 def create_series(request):
     """processing how our create series page renders"""
     if request.method == "POST":

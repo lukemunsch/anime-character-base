@@ -55,11 +55,11 @@
                     {% if user.is_superuser %}
                     <!-- bring up modal for confirmation -->
                     <hr />
-                    <a href="{% url 'edit_series' series.id %}" class="series-edit">
-                        <button type="button" class="btn btn-edit">Edit</button>
+                    <a href="{% url 'edit_series' series.id %}">
+                        <button type="button" class="btn btn-edit mr-3"><i class="fas fa-edit"></i></button>
                     </a>
-                    <a href="{% url 'delete_series' series.id %}" class="series-delete">
-                        <button type="button" class="btn btn-delete">Delete</button>
+                    <a href="{% url 'delete_series' series.id %}">
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                     </a>
                     {% endif %}
                 </div>
