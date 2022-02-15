@@ -1,5 +1,5 @@
 """Set up the view for our models"""
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponseRedirect
 from django.views import generic, View
 from .models import Character, Series, Comment, Suggestion
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm
@@ -63,10 +63,15 @@ def edit_series(request, series_id):
     return render(request, 'edit_series.html', context)
 
 
-def delete_series_req(request, series_id):
-    """processing how to delete a series"""
-    series = get_object_or_404(Series, id=series_id)
-    return render(request, 'delete_series.html')
+def delete_series(request, id):
+    """processing how we delete a record from the series list"""
+    context = {}
+    series = get_object_or_404(Series, id=id)
+
+    if request.method == "POST":
+        series.delete()
+        return redirect(reverse('series_list'))
+    return render(request, 'delete_series.html', context)
 
 
 class SuggestionList(generic.ListView):
