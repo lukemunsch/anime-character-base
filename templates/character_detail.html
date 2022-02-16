@@ -55,34 +55,45 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5 offset-md-1 mb-4  mt-3">
+        <div class="col-md-7 offset-md-1 mb-4 mt-3">
             <h3 class="orange-text">Character Reviews from other Users:</h3>
-            <div class="card-body">
+            <div class="card-body mb-2">
                 {% for comment in comments %}
-                <div>
-                    <p>
-                        {{ comment.name }}
-                        <span class="text-muted font-weight-normal">
-                        </span> wrote:
-                    </p>
-                    {{ comment.body | linebreaks }}
+                <div class="orange-form mb-1">
+                    <div class="white-text">
+                        <p>
+                            {{ comment.body | linebreaks }}
+                        </p>
+                        <p class="orange-text right">
+                            by <em>{{ comment.name }}</em>
+                        </p>
+                    </div>
+                    <div>
+                        {% if user.is_superuser %}
+                        <a href="#">
+                            <button class="btn btn-delete mb-3"><i class="fas fa-trash-alt"></i></button>
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 offset-md-1 mb-4  mt-3">
+        <div class="col-md-4 mb-5 mt-3">
+            {% if user.is_authenticated %}
+
             <div class="orange-form">
-                {% if user.is_authenticated %}
                 <h3 class="orange-text">Please leave a comment:</h3>
                 <p class="orange-text">Comment being left by:</p>
                 <p class="offset-1 orange-text"><strong><em>{{ user.username }}</em></strong></p>
                 <form method="post" class="mt-1">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
                 </form>
-                {% endif %}
+
             </div>
+            {% endif %}
         </div>
     </div>
     <hr class="hr-orange" />

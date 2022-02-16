@@ -1,7 +1,7 @@
 """Set up the view for our models"""
-from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from .models import Character, Series, Comment, Suggestion
+from .models import Character, Series, Suggestion
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm, CommentForm
 
 
@@ -158,7 +158,6 @@ class CharacterDetail(View):
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.character = character
@@ -166,7 +165,7 @@ class CharacterDetail(View):
         else:
             comment_form = CommentForm()
 
-        return render(request, 'character_details.html', {
+        return render(request, 'character_detail.html', {
             'character': character,
             'comments': comments,
             "commented": True,

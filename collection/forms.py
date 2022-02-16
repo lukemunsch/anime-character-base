@@ -107,7 +107,7 @@ class CreateSuggestionForm(forms.ModelForm):
                 'placeholder': 'Series Suggestion'
                 }),
             'reason': Textarea(attrs={
-                'class': "form-control mb-4 orange-text",
+                'class': "form-control mb-4",
                 'style': 'max-width: 500px;',
                 'placeholder': 'Why would you recommend this?'
             }),
@@ -121,7 +121,7 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
         widgets = {
             'body': Textarea(attrs={
-                'class': "form-control mb-4 orange-text",
+                'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
                 'placeholder': 'Please leave a review!'
             })

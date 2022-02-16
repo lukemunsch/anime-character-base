@@ -59,8 +59,7 @@ class Character(models.Model):
 class Comment(models.Model):
     """setting up the comment model under the bios"""
     character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='comments')
-    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="users_name")
-    email = models.ForeignKey(User, on_delete=models.CASCADE, related_name="email_address")
+    name = models.CharField(null=False, max_length=80)
     body = models.TextField(default='', max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=True)
@@ -70,7 +69,7 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return f'Comment {self.body} | {self.email}'
+        return f'Comment {self.body} | {self.name}'
 
 
 SUG_TYPE = ((0, "Character"), (1, "Series"))

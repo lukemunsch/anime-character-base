@@ -36,12 +36,21 @@ p, a {
     margin-bottom: 60px;
 }
 
+.right {
+    text-align: right;
+    padding-right: 30px;
+}
+
 .orange-text {
     color: rgb(255, 135, 0);
 }
 
 .blue-text {
     color: rgb(87, 160, 255);
+}
+
+.white-text {
+    color: whitesmoke;
 }
 
 .new-link {
