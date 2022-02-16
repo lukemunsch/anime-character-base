@@ -21,6 +21,7 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -47,10 +48,11 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'allauth',
-    'allauth.account',    
-    'allauth.socialaccount',    
+    'allauth.account',
+    'allauth.socialaccount',
     'django_summernote',
     'collection',
+    'star_ratings',
 ]
 
 SITE_ID = 1

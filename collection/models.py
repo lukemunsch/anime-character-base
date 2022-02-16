@@ -38,6 +38,7 @@ class Character(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=VIEW_CARD, default=1)
+    votes = models.ManyToManyField(User, related_name='character_rate', blank=True)
 
     class Meta:
         """set up how we would like the cards to be ordered"""
@@ -45,6 +46,9 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+
+    def number_of_votes(self):
+        return self.votes.count()
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -54,19 +58,19 @@ class Character(models.Model):
 
 class Comment(models.Model):
     """setting up the comment model under the bios"""
-    character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='comment')
+    character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='comments')
     name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="users_name")
     email = models.ForeignKey(User, on_delete=models.CASCADE, related_name="email_address")
     body = models.TextField(default='', max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         """set the order for comments"""
-        ordering = ['-created_on']
+        ordering = ['created_on']
 
     def __str__(self):
-        return f'{self.name} | {self.email} says:'
+        return f'Comment {self.body} | {self.email}'
 
 
 SUG_TYPE = ((0, "Character"), (1, "Series"))

@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea
-from .models import Character, Series, Suggestion
+from .models import Character, Series, Suggestion, Comment
 
 
 
@@ -111,4 +111,18 @@ class CreateSuggestionForm(forms.ModelForm):
                 'style': 'max-width: 500px;',
                 'placeholder': 'Why would you recommend this?'
             }),
+        }
+
+class CommentForm(forms.ModelForm):
+    """how we expect our form to look"""
+    class Meta:
+        """what the form entails"""
+        model = Comment
+        fields = ('body',)
+        widgets = {
+            'body': Textarea(attrs={
+                'class': "form-control mb-4 orange-text",
+                'style': 'max-width: 250px;',
+                'placeholder': 'Please leave a review!'
+            })
         }

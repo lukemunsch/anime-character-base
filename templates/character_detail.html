@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-4">
@@ -51,5 +54,38 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-5 offset-md-1 mb-4  mt-3">
+            <h3 class="orange-text">Character Reviews from other Users:</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div>
+                    <p>
+                        {{ comment.name }}
+                        <span class="text-muted font-weight-normal">
+                        </span> wrote:
+                    </p>
+                    {{ comment.body | linebreaks }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-1 mb-4  mt-3">
+            <div class="orange-form">
+                {% if user.is_authenticated %}
+                <h3 class="orange-text">Please leave a comment:</h3>
+                <p class="orange-text">Comment being left by:</p>
+                <p class="offset-1 orange-text"><strong><em>{{ user.username }}</em></strong></p>
+                <form method="post" class="mt-1">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <hr class="hr-orange" />
+</div>
 
-    {% endblock %}
+{% endblock %}

@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponseRedirect
 from django.views import generic, View
 from .models import Character, Series, Comment, Suggestion
-from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm
+from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm, CommentForm
 
 
 def create_char(request):
@@ -137,11 +137,38 @@ class CharacterDetail(View):
         """retrieving from the database"""
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
+        comments = character.comments.filter(approved=True).order_by('-created_on')
 
         return render(
             request,
             "character_detail.html",
             {
                 "character": character,
+                "comments": comments,
+                "commented": False,
+                'comment_form': CommentForm()
             },
         )
+    
+    def post(self, request, slug, *args, **kwargs):
+        """set up how the post of our comments works"""
+        queryset = Character.objects.filter(status=1)
+        character = get_object_or_404(queryset, slug=slug)
+        comments = character.comments.filter(approved=True).order_by('-created_on')
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.character = character
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(request, 'character_details.html', {
+            'character': character,
+            'comments': comments,
+            "commented": True,
+            'comment_form': comment_form,
+        })
