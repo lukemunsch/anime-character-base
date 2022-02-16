@@ -1,7 +1,7 @@
 """Set up the view for our models"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from .models import Character, Series, Suggestion
+from .models import Character, Series, Suggestion, Comment
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm, CommentForm
 
 
@@ -171,3 +171,9 @@ class CharacterDetail(View):
             "commented": True,
             'comment_form': comment_form,
         })
+
+    # def delete_comment(self, request, comm_id):
+    #     """set up the deletion of suggestions from our list"""
+    #     comment = get_object_or_404(Comment, id=comm_id)
+    #     comment.delete()
+    #     return redirect('character_detail')

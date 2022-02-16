@@ -43,9 +43,9 @@
         <!-- main body of the character details -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-10 offset-md-1 mb-5">
+                <div class="col-md-10 offset-md-1 mb-2">
                     <div class="row">
-                        <div class="col-md-12 bio-bg mb-5">
+                        <div class="col-md-12 bio-bg">
                             <p class="orange-text"><strong>Character Bio -</strong></p>
                             <p class="orange-text">{{ character.bio | safe }}</p>
                         </div>
@@ -54,46 +54,50 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-7 offset-md-1 mb-4 mt-3">
-            <h3 class="orange-text">Character Reviews from other Users:</h3>
-            <div class="card-body mb-2">
-                {% for comment in comments %}
-                <div class="orange-form mb-1">
-                    <div class="white-text">
-                        <p>
-                            {{ comment.body | linebreaks }}
-                        </p>
-                        <p class="orange-text right">
-                            by <em>{{ comment.name }}</em>
-                        </p>
+    <hr class="hr-orange" />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-1 mb-4 mt-3">
+                <h3 class="orange-text">Character Reviews from other Users:</h3>
+                <div class="mb-1">
+                    {% for comment in comments %}
+                    <div class="comments">
+                        <div class="white-text">
+                            <p>
+                                {{ comment.body | linebreaks }}
+                            </p>
+                            <p class="orange-text right">
+                                by <em>{{ comment.name }}</em>
+                            </p>
+                        </div>
+                        <div>
+                            {% if user.is_superuser %}
+                            <a href="#">
+                                <button class="btn btn-delete mb-3"><i class="fas fa-trash-alt"></i></button>
+                            </a>
+                            {% endif %}
+                        </div>
                     </div>
-                    <div>
-                        {% if user.is_superuser %}
-                        <a href="#">
-                            <button class="btn btn-delete mb-3"><i class="fas fa-trash-alt"></i></button>
-                        </a>
-                        {% endif %}
-                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-        </div>
-        <div class="col-md-4 mb-5 mt-3">
-            {% if user.is_authenticated %}
-
-            <div class="orange-form">
+            <div class="col-md-4 mb-4 mt-3">
+                {% if user.is_authenticated %}
                 <h3 class="orange-text">Please leave a comment:</h3>
-                <p class="orange-text">Comment being left by:</p>
-                <p class="offset-1 orange-text"><strong><em>{{ user.username }}</em></strong></p>
-                <form method="post" class="mt-1">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
-                </form>
+                <div class="orange-form">
+                    <p class="orange-text">Comment being left by:</p>
+                    <p class="offset-1 orange-text"><strong><em>{{ user.username }}</em></strong></p>
+                    <form method="post" class="mt-1 padded-form">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary mb-3">Post Review</button>
+                    </form>
+                </div>
+                {% else %}
+                <h3 class="orange-text">Please Sign In to leave a comment!</h3>
 
+                {% endif %}
             </div>
-            {% endif %}
         </div>
     </div>
     <hr class="hr-orange" />

@@ -72,9 +72,18 @@ p, a {
 .orange-form {
     border: 3px solid rgb(255, 135, 0);
     border-radius: 20px;
-    padding-top: 30px;
-    padding-left: 50px;
+    padding: 10% 10% 0 10%;
+    margin-top: 20px;
 }
+
+.comments {
+    border: 3px solid rgb(255, 135, 0);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 5px 5% 0 10%;
+}
+
+/* buttons section */
 
 .btn-primary {
     background-color: rgb(255, 135, 0);
@@ -117,7 +126,7 @@ label {
 }
 
 .bio-bg {
-    background-color: white;
+    background-color: none;
     padding: 1rem;
 }
 

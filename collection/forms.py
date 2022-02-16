@@ -13,7 +13,7 @@ class CreateCharacterForm(forms.ModelForm):
         widgets = {
             'name': TextInput(attrs={
                 'class': "form-control mb-4",
-                'style': 'max-width: 250px;',
+                'style': 'max-width: 400px;',
                 'placeholder': 'Character Name'
                 }),
             'char_image': FileInput(attrs={
