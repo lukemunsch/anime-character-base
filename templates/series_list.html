@@ -5,94 +5,100 @@
 <!-- page title area -->
 <div class="container-fluid">
     <div class="row ">
-        <div class="col-12 mt-4">
+        <div class="col-12 mt-4 mb-4">
             <h1 class="text-center orange-text mb-4"><strong>Animé <em>Series</em> Base</strong></h1>
-        </div>
-        <div class="col-md-8 offset-md-2">
-            <h5 class="text-center orange-text">This is a list of the Animé I have watched or shows people have
-                suggested to me.</h5>
-            <p class="text-center orange-text">Please browse through them and if you have a suggestion, please head over
-                to the 'Suggestions' page in Actions to let me know what you think is worth watching!</p>
-        </div>
-    </div>
-</div>
-
-<!-- create new character and series buttons -->
-{% if user.is_superuser %}
-<div class="row">
-    <div class="col-md-4 offset-md-4 text-center">
-        <a href="{% url 'create_character' %}">
-            <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Character</button>
-        </a>
-        <a href="{% url 'create_series' %}">
-            <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Series</button>
-        </a>
-    </div>
-</div>
-{% endif %}
-<hr class="hr-orange" />
-
-
-<!-- creating the list of series cards -->
-
-<div class="container-fluid mb-6">
-    <div class="row offset-md-1 mb-6">
-        {% for series in series_list %}
-        <div class="col-4 col-md-2 margin-under">
-            <div class="card mb-4 rounded-corners card-shadow">
-                <div class="card-body">
-                    <div class="image-container">
-                        {% if "placeholder" in series.series_logo.url %}
-                        <img class="card-img-top"
-                            src="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D189065107S100/views/1,width=378,height=378,appearanceId=839,backgroundColor=F2F2F2/katana-anime-logo-sticker.jpg">
-                        {% else %}
-                        <img class="card-img-top" src=" {{ series.series_logo.url }}">
-                        {% endif %}
-                        <div class="mt-2">
-                            <h5><strong>{{ series.series_name }}</strong></h5>
-                        </div>
-                    </div>
-                    {% if user.is_superuser %}
-                    <!-- bring up modal for confirmation -->
-                    <hr />
-                    <a href="{% url 'edit_series' series.id %}">
-                        <button type="button" class="btn btn-edit mr-3"><i class="fas fa-edit"></i></button>
-                    </a>
-                    <a href="{% url 'delete_series' series.id %}">
-                        <button type="button" class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
-                    </a>
-                    {% endif %}
-                </div>
+            <div class="col-md-8 offset-md-2">
+                {% if user.is_authenticated %}
+                <h5 class="text-center orange-text">
+                    Welcome back, <strong></strong>{{ user.username }}</strong>. We may have updated the list; please check them out below!
+                </h5>
+                {% else %}
+                <h5 class="text-center orange-text">This is a list of the Animé I have watched or shows people have
+                    suggested to me.</h5>
+                <p class="text-center orange-text">Please browse through them and if you have a suggestion, please head
+                    over
+                    to the 'Suggestions' page in Actions to let me know what you think is worth watching!</p>
+                {% endif %}
             </div>
         </div>
-        {% if forloop.counter|divisibleby:5 %}
     </div>
-    <div class="row offset-md-1">
-        {% endif %}
-        {% endfor %}
 
-    </div>
-</div>
-{% if is_paginated %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div>
-            <nav class="mb-6" aria-label="Page navigation">
-                <ul class="pagination justify-content-center mb-6">
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a>
-                    </li>
-                    {% endif %}
-                    {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
+    <!-- create new character and series buttons -->
+    {% if user.is_superuser %}
+    <div class="row">
+        <div class="col-md-4 offset-md-4 text-center">
+            <a href="{% url 'create_character' %}">
+                <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Character</button>
+            </a>
+            <a href="{% url 'create_series' %}">
+                <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Series</button>
+            </a>
         </div>
     </div>
-    <hr class="hr-orange mt-5" />
-</div>
-{% endif %}
+    {% endif %}
+    <hr class="hr-orange" />
 
 
-{% endblock %}
+    <!-- creating the list of series cards -->
+
+    <div class="container-fluid mb-6">
+        <div class="row offset-md-1 mb-6">
+            {% for series in series_list %}
+            <div class="col-4 col-md-2 margin-under">
+                <div class="card mb-4 rounded-corners card-shadow">
+                    <div class="card-body">
+                        <div class="image-container">
+                            {% if "placeholder" in series.series_logo.url %}
+                            <img class="card-img-top"
+                                src="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D189065107S100/views/1,width=378,height=378,appearanceId=839,backgroundColor=F2F2F2/katana-anime-logo-sticker.jpg">
+                            {% else %}
+                            <img class="card-img-top" src=" {{ series.series_logo.url }}">
+                            {% endif %}
+                            <div class="mt-2">
+                                <h5><strong>{{ series.series_name }}</strong></h5>
+                            </div>
+                        </div>
+                        {% if user.is_superuser %}
+                        <!-- bring up modal for confirmation -->
+                        <hr />
+                        <a href="{% url 'edit_series' series.id %}">
+                            <button type="button" class="btn btn-edit mr-3"><i class="fas fa-edit"></i></button>
+                        </a>
+                        <a href="{% url 'delete_series' series.id %}">
+                            <button type="button" class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:5 %}
+        </div>
+        <div class="row offset-md-1">
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+    {% if is_paginated %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <nav class="mb-6" aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mb-6">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a>
+                        </li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr class="hr-orange mt-5" />
+    </div>
+    {% endif %}
+
+
+    {% endblock %}

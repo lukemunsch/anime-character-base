@@ -36,7 +36,7 @@
                                 aria-expanded="false"
                                 aria-controls="collapse{{ suggestion.id }}">
                                 {% if suggestion.sug_type == 0 %}
-                                <strong>{{ suggestion.char_sug }}</strong> from <em>{{ suggestion.series_sug }}</em>
+                                <em>{{ suggestion.char_sug }}</em> from <strong>{{ suggestion.series_sug }}</strong>
                                 {% else %}
                                 <strong>{{ suggestion.series_sug }}</strong>
                                 {% endif %}

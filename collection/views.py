@@ -135,7 +135,7 @@ class CharacterDetail(View):
     """creating he view for our character's main pages"""
     def get(self, request, slug, *args, **kwargs):
         """retrieving from the database"""
-        queryset = Character.objects.filter(status=1)
+        queryset = Character.objects.all()
         character = get_object_or_404(queryset, slug=slug)
         comments = character.comments.filter(approved=True).order_by('-created_on')
 
@@ -172,8 +172,8 @@ class CharacterDetail(View):
             'comment_form': comment_form,
         })
 
-    # def delete_comment(self, request, comm_id):
-    #     """set up the deletion of suggestions from our list"""
-    #     comment = get_object_or_404(Comment, id=comm_id)
-    #     comment.delete()
-    #     return redirect('character_detail')
+    def delete_comment(self, request, comm_id):
+        """set up the deletion of suggestions from our list"""
+        comment = get_object_or_404(Comment, id=comm_id)
+        comment.delete()
+        return redirect('character_detail')

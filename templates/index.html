@@ -9,7 +9,12 @@
         <!-- Character Entries Column -->
         <div class="col-12 mt-4 mb-4">
             <h1 class="text-center orange-text mb-4"><strong>Animé Character Base</strong></h1>
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-8 offset-md-2">
+                {% if user.is_authenticated %}
+                <h5 class="text-center orange-text">
+                    Welcome back, <strong>{{ user.username }}</strong>. We may have some new characters below; please check them out!
+                </h5>
+                    {% else %}
                 <h5 class="text-center orange-text">
                     Welcome to Luke's Animé Character Base. I have created a simple list of favourite charcters from the
                     numerous different animés I have watched over the years. I am always on the lookout for new and
@@ -17,6 +22,7 @@
                     shows to watch, so if you can't see your favourite characters here, then <a class="new-link"
                         href="{% url 'account_signup' %}">sign up</a> and send me a suggestion!
                 </h5>
+                {% endif %}
             </div>
             <!-- add character and series button for superusers only -->
             {% if user.is_superuser %}
@@ -37,7 +43,7 @@
         <!-- visual list list of character cards -->
         <div class="row offset-md-0 offset-lg-1">
             {% for character in character_list %}
-            <div class="col-md-4 col-lg-2 margin-under">
+            <div class="col-6 col-md-3 col-lg-2 margin-under">
                 <div class="card mb-4 rounded-corners card-shadow">
                     <div class="card-body">
                         <div class="image-container">
