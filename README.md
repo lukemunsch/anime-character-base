@@ -87,8 +87,8 @@ For my Animé Character Base, I have chosen a very simple color scheme that is c
 
 - I chose dark base colors for the main content to be displayed on.
 - Recurring themes in some animé is the color orange (Naruto's suit and Ichigo's hair etc) which will be the prominant color for text and icons.
-- I though card style for the displaying of characters with simple functions through the use of buttons for each character or series.
-- my list of suggestions is a simple collapsible list so that people can see what is suggested, but open up the suggestions to find out why people are suggesting them.
+- I though card style for the displaying of characters with simple functions through the use of buttons for each character or series. I went with the nice white background to help it stand out against the darker background.
+- My list of suggestions is a simple collapsible list so that people can see what is suggested, but open up the suggestions to find out why people are suggesting them.
 - My Main nav bar is responsive to the size of the screen and allows fo a drop down in case of smaller screen sizes. It is also adaptable depending on if you are logged in (able to see suggestions and leave comments) or are a superuser (capable of adding character and series and deleting items). The darker colour scheme is to separate it from the main body of the site whilst still leaving the contract between elements clear.
 - My footer is consistant across all pages as well; orange banner with a couple of pieces of writing. The amount of writing is different depending on the size of the screen as we dont want to bar to suddenly increase in height and obstruct any of the other elements for nav or viewing/editing/deleting.
 
@@ -96,27 +96,40 @@ These are the pages that I have set up in order to make the site as functionable
 
 ### Index
 
-screenshot
+[Image for my Homepage](static/images/character_list.png)
 
-### Character Create/Edit Page
+### Displaying Characters
 
-screenshot
+[Character Info page](static/images/character_details.png)
 
-### Views/Add Series List Page
+[Character comments section](static/images/character_comments.png)
 
-screenshot
+### Create/Edit Characters/Series/Suggestions
+
+[Creating and editing character page](static/images/create_charsersug.png)
+
+[Second half of Character creation/Editing page](static/images/create_char2.png)
+
+[Creating and editing Series page](static/images/create_series.png)
+
+
+### Views Series List Page
+
+[Series List](static/images/series_list_screenshot.png)
 
 ### Suggestion Page
 
-screenshot
+[Sugestions page](static/images/suggestions.png)
 
 ### Sign In/Out/Up Pages
 
-screenshot
+[Sign in page](static/images/signin.png)
 
-### Create/Edit Character Page
+[Sign up](static/images/signup.png)
 
-screenshot
+[Sign out](static/images/signout.png)
+
+
 
 ## Features to Implement
 
