@@ -44,7 +44,7 @@ In order to bring my idea to life, I have knocked up some wireframes in order to
 
 [Series List](static/images/series_list.png)
 
-[Suggestions](static/images/suggestions.png)
+[Suggestions](static/images/suggestions_wireframe.png)
 
 [Create/Edit Character/Series/Suggestion](static/images/add_edit_char_series_sug.png)
 
