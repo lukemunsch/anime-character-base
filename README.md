@@ -36,19 +36,21 @@ https://lukeanimebase.herokuapp.com/
 
 ## Wireframes
 
-index
+In order to bring my idea to life, I have knocked up some wireframes in order to help me make my app and how to structure the content. I have made these for each relevant page (some i have grouped together as content and forms are going to look so similar):
 
-create/edit character
+[Index page](static/images/index.png)
 
-series
+[Character Detail](static/images/character_detail.png)
 
-create/edit series
+[Series List](static/images/series_list.png)
 
-Suggestions
+[Suggestions](static/images/suggestions.png)
 
-create suggestion
+[Create/Edit Character/Series/Suggestion](static/images/add_edit_char_series_sug.png)
 
-Sign Up/In/Out
+[Sign In/Up](static/images/sign_in_up.png)
+
+[Sign Out](static/images/sign_out.png)
 
 ## Overview
 
@@ -64,7 +66,7 @@ When people visit my site, I want them to be able to engage with the content; Vi
 
 In order for my site to maximise the engagement, this is the list of user stories to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
 
-1. Display character
+1. Display characters list
 2. Add character
 3. Edit character
 4. Delete character
@@ -74,8 +76,10 @@ In order for my site to maximise the engagement, this is the list of user storie
 8. Delete series
 9. Display suggestions
 10. Add suggestions
-11. Rate characters
-12. Comment on characters
+11. Delete Suggestions
+12. Rate characters
+13. Comment on characters
+14. Delete Comments
 
 ## Features
 
@@ -85,6 +89,8 @@ For my Animé Character Base, I have chosen a very simple color scheme that is c
 - Recurring themes in some animé is the color orange (Naruto's suit and Ichigo's hair etc) which will be the prominant color for text and icons.
 - I though card style for the displaying of characters with simple functions through the use of buttons for each character or series.
 - my list of suggestions is a simple collapsible list so that people can see what is suggested, but open up the suggestions to find out why people are suggesting them.
+- My Main nav bar is responsive to the size of the screen and allows fo a drop down in case of smaller screen sizes. It is also adaptable depending on if you are logged in (able to see suggestions and leave comments) or are a superuser (capable of adding character and series and deleting items). The darker colour scheme is to separate it from the main body of the site whilst still leaving the contract between elements clear.
+- My footer is consistant across all pages as well; orange banner with a couple of pieces of writing. The amount of writing is different depending on the size of the screen as we dont want to bar to suddenly increase in height and obstruct any of the other elements for nav or viewing/editing/deleting.
 
 These are the pages that I have set up in order to make the site as functionable as the Owner may need. This is what I have made: -
 
