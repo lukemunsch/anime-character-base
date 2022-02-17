@@ -1,4 +1,4 @@
-"am i responsive" image header
+![Luke's Animé Base Responsive Image](static/images/amiresp.png)
 
 # Luke's Animé Character Base
 
@@ -28,8 +28,11 @@
 
 ## Link to live site
 
+https://lukeanimebase.herokuapp.com/
+
 ## LucidChart ERD Diagram
 
+[Luke's Animé Base ERD Diagram](static/images/lukeanimebaseERD.png)
 
 ## Wireframes
 
