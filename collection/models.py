@@ -38,7 +38,6 @@ class Character(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=VIEW_CARD, default=1)
-    votes = models.ManyToManyField(User, related_name='character_rate', blank=True)
 
     class Meta:
         """set up how we would like the cards to be ordered"""
@@ -46,9 +45,6 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
-
-    def number_of_votes(self):
-        return self.votes.count()
 
     def save(self, *args, **kwargs):
         if not self.slug:

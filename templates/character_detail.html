@@ -71,12 +71,12 @@
                                 {{ comment.body | linebreaks }}
                             </p>
                             <p class="orange-text right">
-                                by <em>{{ comment.name }}</em>
+                                by <strong><em>{{ comment.name }}</em></strong>
                             </p>
                         </div>
                         <div>
                             {% if user.is_superuser %}
-                            <a href="{% url 'delete_comment' %}">
+                            <a href="{% url 'delete_comment' comment.id %}?charid={{ character.id }}">
                                 <button class="btn btn-delete mb-3"><i class="fas fa-trash-alt"></i></button>
                             </a>
                             {% endif %}
@@ -85,7 +85,9 @@
                     {% empty %}
                     <div class="orange-text mt-5">
                         <p>There have been no Comments left yet...</p>
+                        {% if user.is_authenticated %}
                         <p>Want to start us off???</p>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>

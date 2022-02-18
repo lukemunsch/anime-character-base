@@ -181,9 +181,12 @@ class CharacterDetail(View):
             'comment_form': comment_form,
         })
 
-    def delete_comment(self, request, comm_id):
-        """set up the deletion of suggestions from our list"""
-        comment = get_object_or_404(Comment, id=comm_id)
-        comment.delete()
-        messages.add_message(request, messages.ERROR, 'Comment Successfully Deleted')
-        return redirect(reverse('character_detail'))
+
+def delete_comment(request, comm_id):
+    """set up the deletion of suggestions from our list"""
+    comment = get_object_or_404(Comment, id=comm_id)
+    comment.delete()
+    char_id = request.GET.get('charid')
+    character = get_object_or_404(Character, pk=int(char_id))
+    messages.add_message(request, messages.ERROR, 'Comment Successfully Deleted')
+    return redirect('character_detail', slug=character.slug)
