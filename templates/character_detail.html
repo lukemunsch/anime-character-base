@@ -76,7 +76,7 @@
                         </div>
                         <div>
                             {% if user.is_superuser %}
-                            <a href="#">
+                            <a href="{% url 'delete_comment' %}">
                                 <button class="btn btn-delete mb-3"><i class="fas fa-trash-alt"></i></button>
                             </a>
                             {% endif %}

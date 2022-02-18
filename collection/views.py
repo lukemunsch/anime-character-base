@@ -1,5 +1,6 @@
 """Set up the view for our models"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.contrib import messages
 from django.views import generic, View
 from .models import Character, Series, Suggestion, Comment
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm, CommentForm
@@ -11,6 +12,7 @@ def create_char(request):
         char_form = CreateCharacterForm(request.POST, request.FILES)
         if char_form.is_valid():
             char_form.save()
+            messages.add_message(request, messages.SUCCESS, 'Character Successfully Created')
         return redirect(reverse('home'))
     char_form = CreateCharacterForm()
     context = {
@@ -26,6 +28,7 @@ def edit_char(request, slug):
         char_form = CreateCharacterForm(request.POST, request.FILES, instance=char)
         if char_form.is_valid():
             char_form.save()
+            messages.add_message(request, messages.SUCCESS, 'Character Successfully Updated')
             return redirect(reverse('home'))
     char_form = CreateCharacterForm(instance=char)
     context = {
@@ -41,6 +44,7 @@ def delete_char(request, slug):
 
     if request.method == "POST":
         character.delete()
+        messages.add_message(request, messages.ERROR, 'Character Successfully Deleted')
         return redirect(reverse('home'))
     return render(request, 'delete_character.html', context)
 
@@ -51,6 +55,7 @@ def create_series(request):
         series_form = CreateSeriesForm(request.POST, request.FILES)
         if series_form.is_valid():
             series_form.save()
+        messages.add_message(request, messages.SUCCESS, 'Series Successfully Created')
         return redirect(reverse('series_list'))
     series_form = CreateSeriesForm()
     context = {
@@ -66,6 +71,7 @@ def edit_series(request, series_id):
         series_form = CreateSeriesForm(request.POST, request.FILES, instance=series)
         if series_form.is_valid():
             series_form.save()
+            messages.add_message(request, messages.SUCCESS, 'Series Successfully Edited')
             return redirect(reverse('series_list'))
     series_form = CreateSeriesForm(instance=series)
     context = {
@@ -81,6 +87,7 @@ def delete_series(request, id):
 
     if request.method == "POST":
         series.delete()
+        messages.add_message(request, messages.ERROR, 'Series Successfully Deleted')
         return redirect(reverse('series_list'))
     return render(request, 'delete_series.html', context)
 
@@ -93,19 +100,13 @@ class SuggestionList(generic.ListView):
     paginate_by = 12
 
 
-def delete_sug(request, sug_id):
-    """set up the deletion of suggestions from our list"""
-    suggest = get_object_or_404(Suggestion, id=sug_id)
-    suggest.delete()
-    return redirect('suggestions')
-
-
 def create_sug(request):
     """processing how my suggestion form will render"""
     if request.method == "POST":
         sug_form = CreateSuggestionForm(request.POST)
         if sug_form.is_valid():
             sug_form.save()
+            messages.add_message(request, messages.SUCCESS, 'Thank you for leaving me a suggestion!')
         return redirect(reverse('suggestions'))
     sug_form = CreateSuggestionForm()
     context = {
@@ -113,6 +114,13 @@ def create_sug(request):
     }
     return render(request, 'create_suggestion.html', context)
 
+
+def delete_sug(request, sug_id):
+    """set up the deletion of suggestions from our list"""
+    suggest = get_object_or_404(Suggestion, id=sug_id)
+    suggest.delete()
+    messages.add_message(request, messages.ERROR, 'Suggestion Successfully Deleted')
+    return redirect('suggestions')
 
 
 class CharacterList(generic.ListView):
@@ -162,6 +170,7 @@ class CharacterDetail(View):
             comment = comment_form.save(commit=False)
             comment.character = character
             comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Thanks for posting a comment!!!')
         else:
             comment_form = CommentForm()
 
@@ -176,4 +185,5 @@ class CharacterDetail(View):
         """set up the deletion of suggestions from our list"""
         comment = get_object_or_404(Comment, id=comm_id)
         comment.delete()
-        return redirect('character_detail')
+        messages.add_message(request, messages.ERROR, 'Comment Successfully Deleted')
+        return redirect(reverse('character_detail'))

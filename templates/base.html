@@ -75,7 +75,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Admin Tools 
+                            Admin Tools
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'create_character' %}">Create New Character </a>
@@ -88,13 +88,12 @@
         </nav>
 
         <!-- messages section here -->
-        <div class="container">
+        <div class="container fixed-alerts">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-8 offset-md-2 mt-3">
                     {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    <div class="alert {{ message.tags }} alert-dismissible text-center fade show" id="msg" role="alert">
                         {{ message | safe }}
-                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     {% endfor %}
                 </div>
@@ -132,7 +131,7 @@
                 let messages = document.getElementById('msg');
                 let alert = new bootstrap.Alert(messages);
                 alert.close();
-            }, 3000);
+            }, 1500);
         </script>
     </div>
 </body>
