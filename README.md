@@ -96,40 +96,37 @@ These are the pages that I have set up in order to make the site as functionable
 
 ### Index
 
-[Image for my Homepage](static/images/character_list.png)
+![Image for my Homepage](static/images/character_list.png)
 
 ### Displaying Characters
 
-[Character Info page](static/images/character_details.png)
+![Character Info page](static/images/character_details.png)
 
-[Character comments section](static/images/character_comments.png)
+![Character comments section](static/images/character_comments.png)
 
 ### Create/Edit Characters/Series/Suggestions
 
-[Creating and editing character page](static/images/create_charsersug.png)
+![Creating and editing character page](static/images/create_charsersug.png)
 
-[Second half of Character creation/Editing page](static/images/create_char2.png)
+![Second half of Character creation/Editing page](static/images/create_char2.png)
 
-[Creating and editing Series page](static/images/create_series.png)
-
+![Creating and editing Series page](static/images/create_series.png)
 
 ### Views Series List Page
 
-[Series List](static/images/series_list_screenshot.png)
+![Series List](static/images/series_list_screenshot.png)
 
 ### Suggestion Page
 
-[Sugestions page](static/images/suggestions.png)
+![Sugestions page](static/images/suggestions.png)
 
 ### Sign In/Out/Up Pages
 
-[Sign in page](static/images/signin.png)
+![Sign in page](static/images/signin.png)
 
-[Sign up](static/images/signup.png)
+![Sign up](static/images/signup.png)
 
-[Sign out](static/images/signout.png)
-
-
+![Sign out](static/images/signout.png)
 
 ## Features to Implement
 
@@ -307,5 +304,5 @@ At this point, the same screen from our 'runserver' test should now be displayed
 
 I would like to thank the dedicated team of tutors at Code Institute for helping me to overcome certain issues with the project regarding a number of different problems that arose.
 My mentor Chris Quinn was amazing at helping me to understand the project and guide me to create the best possible project.
-The slack community helped me with user stories and quick fixes that allowed me to progress with my project when I became stumped.
+The Slack community helped me with user stories and quick fixes that allowed me to progress with my project when I became stumped.
 
