@@ -28,7 +28,11 @@ class Character(models.Model):
     name = models.CharField(unique=True, max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     char_image = CloudinaryField('image', default='placeholder')
-    series_name = models.ForeignKey(Series, on_delete=models.CASCADE, related_name="series")
+    series_name = models.ForeignKey(
+        Series,
+        on_delete=models.CASCADE,
+        related_name="series"
+    )
     first_published = models.DateField(null=True, blank=True)
     first_aired = models.DateField(null=True, blank=True)
     age = models.PositiveIntegerField(default=0)
@@ -55,7 +59,11 @@ class Character(models.Model):
 
 class Comment(models.Model):
     """setting up the comment model under the bios"""
-    character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='comments')
+    character = models.ForeignKey(
+        Character,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
     name = models.CharField(null=False, max_length=80)
     body = models.TextField(default='', max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)

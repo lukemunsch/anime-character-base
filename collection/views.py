@@ -1,7 +1,6 @@
 """Set up the view for our models"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
-from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Character, Series, Suggestion, Comment
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm, CommentForm
@@ -158,7 +157,7 @@ class CharacterDetail(View):
                 'comment_form': CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
         """set up how the post of our comments works"""
         queryset = Character.objects.filter(status=1)

@@ -18,6 +18,7 @@
     6. [Create/edit Character Page](#createcharacterpage)
 7. [Features to Implement](#featurestoimplement)
 8. [Testing](#testing)
+    1. [Lighthouse Reports](#lighthousereports)    
 9. [Unfixed Bugs](#unfixedbugs)
 10. [Deployment](#deployment)
     1. [Forking and Cloning](#forkingandcloning)
@@ -133,6 +134,24 @@ These are the pages that I have set up in order to make the site as functionable
 This is a list of things that I would like too implement if I had more time
 
 ## Testing
+
+### Lighthouse Reports
+
+[Create character page](static/images/lighthouse-reps/add-character-lighthouse.png)
+
+[Character details](static/images/lighthouse-reps/char-details-lighthouse.png)
+
+[Deleting objects page](static/images/lighthouse-reps/delete-lighthouse.png)
+
+[Index page](static/images/lighthouse-reps/index-lighthouse.png)
+
+[Series list page](static/images/lighthouse-reps/series-list-lighthouse.png)
+
+[Signout page](static/images/lighthouse-reps/signout-lighthouse.png)
+
+[Signup/in page](static/images/lighthouse-reps/signup-in-lighthouse.png)
+
+[Suggestions page](static/images/lighthouse-reps/suggestions-lighthouse.png)
 
 html testing
 
