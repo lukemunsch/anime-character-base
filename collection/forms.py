@@ -3,13 +3,23 @@ from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, T
 from .models import Character, Series, Suggestion, Comment
 
 
-
 class CreateCharacterForm(forms.ModelForm):
     """set up the form to process character creations"""
     class Meta:
         """what we expect our form to include"""
         model = Character
-        fields = ['name', 'char_image', 'series_name', 'age', 'special', 'first_published', 'first_aired', 'good_reason', 'bad_reason', 'bio']
+        fields = [
+            'name',
+            'char_image',
+            'series_name',
+            'age',
+            'special',
+            'first_published',
+            'first_aired',
+            'good_reason',
+            'bad_reason',
+            'bio'
+        ]
         widgets = {
             'name': TextInput(attrs={
                 'class': "form-control mb-4",
@@ -112,6 +122,7 @@ class CreateSuggestionForm(forms.ModelForm):
                 'placeholder': 'Why would you recommend this?'
             }),
         }
+
 
 class CommentForm(forms.ModelForm):
     """how we expect our form to look"""
