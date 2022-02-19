@@ -20,12 +20,12 @@
                     <div class="col-md-6 masthead-image">
                         {% if "placeholder" in character.char_image.url %}
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU"
-                            width="100%">
+                            width="100%" alt="placeholder-image">
                         {% else %}
-                        <img src=" {{ character.char_image.url }}" width="100%">
+                        <img src=" {{ character.char_image.url }}" width="100%" alt="{{ character.slug }}-image">
                         {% endif %}
-                        <h3 class="image-label">{{ character.name }}</h3>
-                        <h3 class="image-subtitle">from the series: {{ character.series_name }}</h3>
+                        <h2 class="image-label">{{ character.name }}</h2>
+                        <h2 class="image-subtitle">from the series: {{ character.series_name }}</h2>
                     </div>
                     <!-- this is the main info about character -->
                     <div class="col-md-6 d-inline mt-3">
@@ -74,7 +74,7 @@
                         <div>
                             {% if user.is_superuser %}
                             <a href="{% url 'delete_comment' comment.id %}?charid={{ character.id }}">
-                                <button class="btn btn-delete mb-3"><i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-delete mb-3" aria-label="delete"><i class="fas fa-trash-alt"></i></button>
                             </a>
                             {% endif %}
                         </div>
@@ -98,7 +98,7 @@
                     <form method="post" class="mt-1 padded-form">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-primary mb-3">Post Review</button>
+                        <button type="submit" class="btn btn-primary mb-3" aria-label="submit-comment">Post Comment</button>
                     </form>
                 </div>
                 {% else %}

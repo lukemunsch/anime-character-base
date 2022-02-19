@@ -42,7 +42,7 @@ p, a {
 }
 
 .orange-text {
-    color: rgb(255, 135, 0);
+    color: #ffae00;
 }
 
 .blue-text {
@@ -62,7 +62,7 @@ p, a {
 }
 
 .orange {
-    background-color: rgb(255, 135, 0);
+    background-color: #ffae00;
 }
 
 .blue {
@@ -70,14 +70,14 @@ p, a {
 }
 
 .orange-form {
-    border: 3px solid rgb(255, 135, 0);
+    border: 3px solid #ffae00;
     border-radius: 20px;
     padding: 20px 5% 0 5%;
     margin-top: 20px;
 }
 
 .comments {
-    border: 3px solid rgb(255, 135, 0);
+    border: 3px solid #ffae00;
     border-radius: 20px;
     margin-top: 20px;
     padding: 5px 5% 0 10%;
@@ -94,7 +94,7 @@ p, a {
 /* buttons section */
 
 .btn-primary {
-    background-color: rgb(255, 135, 0);
+    background-color: #ffae00;
     border-radius: 10px;
     border-color: rgb(125, 65, 0);
     color: black;
@@ -115,7 +115,7 @@ p, a {
 }
 
 .hr-orange {
-    background-color: rgb(255, 135, 0);
+    background-color: #ffae00;
     height: 1px;
 }
 
@@ -143,7 +143,7 @@ label {
     top: 5%;
     min-width: 30%;
     left: 0px;
-    background-color: rgb(255, 135, 0);
+    background-color: #ffae00;
     font-size: 200%;
 }
 
@@ -152,6 +152,6 @@ label {
     bottom: 1%;
     min-width: 30%;
     right: 0px;
-    background-color: rgb(255, 135, 0);
+    background-color: #ffae00;
     font-size: 150%;
 }
