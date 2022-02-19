@@ -13,7 +13,7 @@ urlpatterns = [
     path('create_series/', views.create_series, name='create_series'),
     path('create_suggestion/', views.create_sug, name='create_suggestion'),
     path('delete_sug/<sug_id>/', views.delete_sug, name='delete_suggestion'),
-    path('delete_comm/<comm_id>/', views.delete_comment, name='delete_com'),
+    path('delete_comm/<comm_id>/', views.delete_comment, name='delete_comment'),
     path('suggestions/', views.SuggestionList.as_view(), name='suggestions'),
-    path('<slug:slug>/', views.CharacterDetail.as_view(), name='char_detail'),
+    path('<slug:slug>/', views.CharacterDetail.as_view(), name='character_detail'),
 ]
