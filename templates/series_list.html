@@ -22,7 +22,6 @@
             </div>
         </div>
     </div>
-
     <!-- create new character and series buttons -->
     {% if user.is_superuser %}
     <div class="row">
@@ -37,10 +36,7 @@
     </div>
     {% endif %}
     <hr class="hr-orange" />
-
-
     <!-- creating the list of series cards -->
-
     <div class="container-fluid mb-6">
         <div class="row offset-md-1 mb-6">
             {% for series in series_list %}
@@ -76,7 +72,6 @@
         <div class="row offset-md-1">
             {% endif %}
             {% endfor %}
-
         </div>
     </div>
     {% if is_paginated %}

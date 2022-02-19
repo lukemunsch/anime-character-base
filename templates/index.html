@@ -5,7 +5,6 @@
 
 <div class="container-fluid">
     <div class="row">
-
         <!-- Character Entries Column -->
         <div class="col-12 mt-4 mb-4">
             <h1 class="text-center orange-text mb-4"><strong>Animé Character Base</strong></h1>
@@ -40,7 +39,6 @@
             <hr class="hr-orange mb-2 mt-2" />
             {% endif %}
         </div>
-
         <!-- visual list list of character cards -->
         <div class="row offset-md-0 offset-lg-1">
             {% for character in character_list %}
@@ -48,7 +46,6 @@
                 <div class="card mb-4 rounded-corners card-shadow">
                     <div class="card-body">
                         <a href="{% url 'character_detail' character.slug %}" class="character-link">
-
                             <div class="image-container">
                                 {% if "placeholder" in character.char_image.url %}
                                 <img class="card-img-top"
@@ -77,8 +74,8 @@
                         <!-- fan score section -->
                         <p>Fan Star Rating:</p>
                         <div>
-                            <p>avg% <i class="far fa-star"></i></p>
-                            <p><span class="text-muted">from <strong>'count'</strong> votes!</span></p>
+                            <p>{{ Rating.average_stars }} <i class="far fa-star"></i></p>
+                            <p><span class="text-muted">from <strong>{{ Rating.number_of_votes }}</strong> votes!</span></p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +85,6 @@
         <div class="row">
             {% endif %}
             {% endfor %}
-
         </div>
     </div>
 </div>

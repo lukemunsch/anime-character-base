@@ -86,30 +86,3 @@ class Suggestion(models.Model):
 
     def __str__(self):
         return f'{self.sug_type} | {self.created_when}'
-
-
-RATE_SCORES = (
-    (0, 0),
-    (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5),
-)
-
-
-class Rating(models.Model):
-    """set up our user scoring model"""
-    character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='char_ratings')
-    votes = models.ManyToManyField(User, related_name='char_votes', blank=True)
-    stars = models.IntegerField(choices=RATE_SCORES, blank=True)
-
-    def number_of_votes(self):
-        """count the number of votes a particular character has"""
-        return self.votes.count()
-
-    def average_stars(self):
-        """average the scores of user votes"""
-        char = character.stars.get(self)
-        avg_stars = char.rating_set.aggregate(Avg('char'))
-

@@ -1,6 +1,7 @@
 """Set up the view for our models"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Character, Series, Suggestion, Comment
 from .forms import CreateCharacterForm, CreateSeriesForm, CreateSuggestionForm, CommentForm
@@ -163,6 +164,9 @@ class CharacterDetail(View):
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
         comments = character.comments.filter(approved=True).order_by('-created_on')
+        voted = False
+        if character.votes.filter(id=request.user.id).exists():
+            voted = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
