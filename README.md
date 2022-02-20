@@ -26,7 +26,6 @@
     3. [Remote Deployment](#remotedeployment)
 11. [Credits](#credits)
 
-
 ## Link to live site
 
 https://lukeanimebase.herokuapp.com/
@@ -327,6 +326,8 @@ At this point, the same screen from our 'runserver' test should now be displayed
 ## Credits
 
 I would like to thank the dedicated team of tutors at Code Institute for helping me to overcome certain issues with the project regarding a number of different problems that arose.
+
 My mentor Chris Quinn was amazing at helping me to understand the project and guide me to create the best possible project.
+
 The Slack community helped me with user stories and quick fixes that allowed me to progress with my project when I became stumped.
 

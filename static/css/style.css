@@ -134,7 +134,7 @@ label {
 }
 
 .bio-bg {
-    background-color: none;
+    background-color: rgba(0, 0, 0, 0);
     padding: 1rem;
 }
 
