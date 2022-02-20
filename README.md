@@ -64,6 +64,8 @@ If a character that the users like doesn't appear on the site, then they can sen
 
 When people visit my site, I want them to be able to engage with the content; View their favorite characters, rate them, see the list of series that the admin has viewed and added as well as see and leave suggestions for the admin to review and implement at their leisure.
 
+On all future visits, I would like them to see how the characters have been 'treated' by other users; new comments and engage with other users, add new suggestions if one comes to mind.
+
 For my site to maximize the engagement, this is the list of user stories to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
 
 [[#1](https://github.com/lukemunsch/anime-character-base/issues/1)] - Display Characters on the main index page for users
@@ -74,7 +76,7 @@ For my site to maximize the engagement, this is the list of user stories to addr
 
 [[#4](https://github.com/lukemunsch/anime-character-base/issues/4)] - Delete Character if no longer require or no one comments
 
-[[#5](https://github.com/lukemunsch/anime-character-base/issues/5)] - Rate Character - This was not completed but would involve user input
+[[#5](https://github.com/lukemunsch/anime-character-base/issues/5)] - Rate Character - This was not completed but would involve user input to show the most popular characters
 
 [[#6](https://github.com/lukemunsch/anime-character-base/issues/6)] - Comment on Characters so that people can leave their feedback
 
@@ -159,7 +161,7 @@ One thing that I looked into was the Rating system and implementing a way for us
 
 ### HTML Testing
 
-
+html calidator screenshot
 
 ### CSS testing
 
@@ -171,7 +173,11 @@ One thing that I looked into was the Rating system and implementing a way for us
 
 [PEP8 urls validator](static/images/validators/collection-urls-pep8.png)
 
+[PEP8 views validator](static/images/validators/collection-views-pep8.png)
+
 ### Site Tests
+
+This is the testing files report for tests run on pages
 
 ## Unfixed Bugs
 

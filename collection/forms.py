@@ -3,7 +3,7 @@ from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, T
 from .models import Character, Series, Suggestion, Comment
 
 
-class CreateCharacterForm(forms.ModelForm):
+class CreateCharForm(forms.ModelForm):
     """set up the form to process character creations"""
     class Meta:
         """what we expect our form to include"""
@@ -74,7 +74,7 @@ class CreateCharacterForm(forms.ModelForm):
         }
 
 
-class CreateSeriesForm(forms.ModelForm):
+class AddSerForm(forms.ModelForm):
     """setting up my form to add new series to the db"""
     class Meta:
         """what it will reference"""
@@ -94,7 +94,7 @@ class CreateSeriesForm(forms.ModelForm):
         }
 
 
-class CreateSuggestionForm(forms.ModelForm):
+class CreateSugForm(forms.ModelForm):
     """create a form for people to send me suggestions"""
     class Meta:
         """how I would like the form to look"""
@@ -124,7 +124,7 @@ class CreateSuggestionForm(forms.ModelForm):
         }
 
 
-class CommentForm(forms.ModelForm):
+class ComForm(forms.ModelForm):
     """how we expect our form to look"""
     class Meta:
         """what the form entails"""
