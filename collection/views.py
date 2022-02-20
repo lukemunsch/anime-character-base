@@ -139,7 +139,7 @@ class SeriesList(generic.ListView):
     paginate_by = 15
 
 
-class CharacterDetail(View):
+class CharDetail(View):
     """creating he view for our character's main pages"""
     def get(self, request, slug, *args, **kwargs):
         """retrieving from the database"""
@@ -163,9 +163,7 @@ class CharacterDetail(View):
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
         comments = character.comments.filter(approved=True).order_by('-created_on')
-        voted = False
-        if character.votes.filter(id=request.user.id).exists():
-            voted = True
+        
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -185,7 +183,7 @@ class CharacterDetail(View):
         })
 
 
-def delete_comment(request, comm_id):
+def delete_comm(request, comm_id):
     """set up the deletion of suggestions from our list"""
     comment = get_object_or_404(Comment, id=comm_id)
     comment.delete()
