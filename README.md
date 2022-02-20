@@ -159,7 +159,9 @@ One thing that I looked into was the Rating system and implementing a way for us
 
 html testing
 
-css testing
+### CSS testing
+
+[CSS Validator](static/images/validators/css-validator.png)
 
 python testing
 
