@@ -67,20 +67,31 @@ When people visit my site, I want them to be able to engage with the content; Vi
 
 In order for my site to maximise the engagement, this is the list of user stories to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
 
-1. Display characters list
-2. Add character
-3. Edit character
-4. Delete character
-5. Display series
-6. Add series
-7. Edit series
-8. Delete series
-9. Display suggestions
-10. Add suggestions
-11. Delete Suggestions
-12. Rate characters
-13. Comment on characters
-14. Delete Comments
+[[#1](https://github.com/lukemunsch/anime-character-base/issues/1)] - Display Characters on the main index page for users
+
+[[#2](https://github.com/lukemunsch/anime-character-base/issues/2)] - Add Character to keep content updated and fresh
+
+[[#3](https://github.com/lukemunsch/anime-character-base/issues/3)] - Edit Character to make sure info is correct or update different pictures
+
+[[#4](https://github.com/lukemunsch/anime-character-base/issues/4)] - Delete Character if no longer require or no one comments
+
+[[#5](https://github.com/lukemunsch/anime-character-base/issues/5)] - Rate Character - This was not completed but would involve user input
+
+[[#6](https://github.com/lukemunsch/anime-character-base/issues/6)] - Comment on Characters so that people can leave their feedback
+
+[[#7](https://github.com/lukemunsch/anime-character-base/issues/7)] - Sign Up/In/Out for users to receive full activities on the site
+
+[[#8](https://github.com/lukemunsch/anime-character-base/issues/8)] - Create Series based on viewing or recommendation
+
+[[#9](https://github.com/lukemunsch/anime-character-base/issues/9)] - Edit Series to keep content up to date and fresh
+
+[[#10](https://github.com/lukemunsch/anime-character-base/issues/10)] - Delete Series if no longer require
+
+[[#11](https://github.com/lukemunsch/anime-character-base/issues/11)] - Display Suggestions that users have left me to watch or add
+
+[[#12](https://github.com/lukemunsch/anime-character-base/issues/12)] - Create suggestions for the admin to review
+
+[[#13](https://github.com/lukemunsch/anime-character-base/issues/13)] - Delete Comments that are inappropriate or not necessary
 
 ## Features
 
@@ -97,30 +108,35 @@ These are the pages that I have set up in order to make the site as functionable
 
 ### Index
 
+[Index page](static/images/screenshots/index-ss.png)
+
+[Nav bar](static/images/screenshots/nav-ss.png)
 
 ### Displaying Characters
 
+[Character Detail page](static/images/screenshots/char-det-ss.png)
 
+[Character details page pt.2](static/images/screenshots/char-det2-ss.png)
 
 ### Create/Edit Characters/Series/Suggestions
 
-
-
+[Item creation page](static/images/screenshots/create-page-ss.png)
 
 ### Views Series List Page
 
+[Series List](static/images/screenshots/series-ss.png)
 
 ### Suggestion Page
 
+[Suggestions page](static/images/screenshots/suggest-ss.png)
 
 ### Sign In/Out/Up Pages
 
-
-
+[Log in/out/up style](static/images/screenshots/logout-ss.png)
 
 ## Features to Implement
 
-This is a list of things that I would like too implement if I had more time
+One thing that I looked into was the Rating system and implementing a way for users to vote for their favourite characters. I came across many different issues that prevented me from making it work and with the limited time, I decided to remove my attempt and leave it out of my final deployment.
 
 ## Testing
 
