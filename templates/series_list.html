@@ -10,7 +10,8 @@
             <div class="col-md-8 offset-md-2">
                 {% if user.is_authenticated %}
                 <h2 class="text-center orange-text">
-                    Welcome back, <strong></strong>{{ user.username }}</strong>. We may have updated the list; please check them out below!
+                    Welcome back, <strong></strong>{{ user.username }}</strong>. We may have updated the list; please
+                    check them out below!
                 </h2>
                 {% else %}
                 <h2 class="text-center orange-text">This is a list of the Animé I have watched or shows people have
@@ -49,7 +50,8 @@
                             <img class="card-img-top" alt="placeholder-image"
                                 src="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D189065107S100/views/1,width=378,height=378,appearanceId=839,backgroundColor=F2F2F2/katana-anime-logo-sticker.jpg">
                             {% else %}
-                            <img class="card-img-top" src=" {{ series.series_logo.url }}" alt="{{ series.series_name }}-image">
+                            <img class="card-img-top" src=" {{ series.series_logo.url }}"
+                                alt="{{ series.series_name }}-image">
                             {% endif %}
                             <div class="mt-2">
                                 <h5><strong>{{ series.series_name }}</strong></h5>
@@ -59,10 +61,12 @@
                         <!-- bring up modal for confirmation -->
                         <hr />
                         <a href="{% url 'edit_series' series.id %}">
-                            <button type="button" class="btn btn-edit mr-3" aria-label="edit"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-edit mr-3" aria-label="edit"><i
+                                    class="fas fa-edit"></i></button>
                         </a>
                         <a href="{% url 'delete_series' series.id %}">
-                            <button type="button" class="btn btn-delete" aria-label="delete"><i class="fas fa-trash-alt"></i></button>
+                            <button type="button" class="btn btn-delete" aria-label="delete"><i
+                                    class="fas fa-trash-alt"></i></button>
                         </a>
                         {% endif %}
                     </div>
@@ -94,7 +98,8 @@
         </div>
         <hr class="hr-orange mt-5" />
     </div>
-    {% endif %}
+</div>
+{% endif %}
 
 
-    {% endblock %}
+{% endblock %}
