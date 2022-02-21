@@ -17,11 +17,12 @@
             <div class="col-md-10 offset-md-1 mb-2">
                 <!-- image and character name + series -->
                 <div class="row">
-                    <div class="col-md-6 masthead-image">
+                    <div class="col-md-6">
                         {% if "placeholder" in character.char_image.url %}
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU" alt="placeholder-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU"
+                            alt="placeholder-image">
                         {% else %}
-                        <img src=" {{ character.char_image.url }}" alt="{{ character.slug }}-image">
+                        <img src=" {{ character.char_image.url }}" alt="{{ character.slug }}-image" class="char-img">
                         {% endif %}
                         <h2 class="image-label">{{ character.name }}</h2>
                         <h2 class="image-subtitle">from the series: {{ character.series_name }}</h2>
@@ -63,15 +64,16 @@
                     {% for comment in comments %}
                     <div class="comments">
                         <div class="white-text">
-                                {{ comment.body | linebreaks }}
+                            {{ comment.body | linebreaks }}
                             <p class="orange-text right">
-                                by <strong><em>{{ comment.name }}</em></strong>  | {{ comment.created_on }}
+                                by <strong><em>{{ comment.name }}</em></strong> | {{ comment.created_on }}
                             </p>
                         </div>
                         <div>
                             {% if user.is_superuser %}
                             <a href="{% url 'delete_comment' comment.id %}?charid={{ character.id }}">
-                                <button class="btn btn-delete mb-3" aria-label="delete"><i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-delete mb-3" aria-label="delete"><i
+                                        class="fas fa-trash-alt"></i></button>
                             </a>
                             {% endif %}
                         </div>
@@ -95,7 +97,8 @@
                     <form method="post" class="mt-1 padded-form">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-primary mb-3" aria-label="submit-comment">Post Comment</button>
+                        <button type="submit" class="btn btn-primary mb-3" aria-label="submit-comment">Post
+                            Comment</button>
                     </form>
                 </div>
                 {% else %}

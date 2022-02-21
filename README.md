@@ -161,7 +161,7 @@ One thing that I looked into was the Rating system and implementing a way for us
 
 ### HTML Testing
 
-html calidator screenshot
+html validator screenshot
 
 ### CSS testing
 
@@ -169,11 +169,7 @@ html calidator screenshot
 
 ### Python Tests
 
-[PEP8 models validators](static/images/validators/collection-models-pep8.png)
-
-[PEP8 urls validator](static/images/validators/collection-urls-pep8.png)
-
-[PEP8 views validator](static/images/validators/collection-views-pep8.png)
+I have run my site through the PEP8 validators and report no issues regarding Luke's Anime Base.
 
 ### Site Tests
 
@@ -335,6 +331,12 @@ Along with our DevEnv and Heroku, we also need one additional facility to handle
 
 At this point, the same screen from our 'runserver' test should now be displayed on the deployed webpage. This is the basic deployment of the app completed.
 
+For final deployment:
+
+- Change DEBUG to False in our settings.py file
+
+***For final deployment of site, remember to switch debug to False as this will allow anyone to gain access to secret information***
+
 ## Credits
 
 I would like to thank the dedicated team of tutors at Code Institute for helping me to overcome certain issues with the project regarding several different problems that arose.
@@ -342,3 +344,5 @@ I would like to thank the dedicated team of tutors at Code Institute for helping
 My mentor Chris Quinn was amazing at helping me to understand the project and guide me to create the best possible project.
 
 The Slack community helped me with user stories and quick fixes that allowed me to progress with my project when I became stumped.
+
+A huge thank you to Scott and John from the tutors as they were regular helpers on this project and fixing an issue regarding my static files.
