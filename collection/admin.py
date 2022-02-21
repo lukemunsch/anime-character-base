@@ -3,7 +3,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Series, Character, Comment, Suggestion
 
 
-
 @admin.register(Character)
 class CharacterAdmin(SummernoteModelAdmin):
     """set up for our character creation form"""
@@ -18,7 +17,13 @@ class CharacterAdmin(SummernoteModelAdmin):
         'first_aired',
         'status',
         )
-    search_fields = ['name', 'series_name', 'bio', 'good_reason', 'bad_reason']
+    search_fields = [
+        'name',
+        'series_name',
+        'bio',
+        'good_reason',
+        'bad_reason'
+        ]
 
 
 @admin.register(Series)
@@ -29,6 +34,7 @@ class SeriesAdmin(admin.ModelAdmin):
     actions = ['approve_series']
 
     def approve_series(self, request, queryset):
+        """set up admin actions"""
         queryset.update(approved=True)
 
 
@@ -41,6 +47,7 @@ class CommentAdmin(admin.ModelAdmin):
     actions = ['approve_comment']
 
     def approve_comment(self, request, queryset):
+        """set up admin actions for comments"""
         queryset.update(approved=True)
 
 
