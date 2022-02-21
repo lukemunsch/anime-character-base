@@ -10,7 +10,8 @@ class CharacterAdmin(SummernoteModelAdmin):
     summernote_field = ['bio']
 
     list_filter = ('status',)
-    list_display = ('name', 'series_name', 'first_published', 'first_aired', 'status',)
+    list_display = ('name', 'series_name', 
+    'first_published', 'first_aired', 'status',)
     search_fields = ['name', 'series_name', 'bio', 'good_reason', 'bad_reason']
 
 

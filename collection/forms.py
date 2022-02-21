@@ -1,5 +1,6 @@
 from django import forms
-from django.forms import TextInput, FileInput, NumberInput, Select, DateInput, Textarea
+from django.forms import (TextInput, FileInput,
+NumberInput, Select, DateInput, Textarea)
 from .models import Character, Series, Suggestion, Comment
 
 

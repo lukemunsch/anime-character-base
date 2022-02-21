@@ -22,7 +22,7 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU"
                             width="100%" alt="placeholder-image">
                         {% else %}
-                        <img src=" {{ character.char_image.url }}" width="100%" alt="{{ character.slug }}-image">
+                        <img src=" {{ character.char_image.url }}" alt="{{ character.slug }}-image">
                         {% endif %}
                         <h2 class="image-label">{{ character.name }}</h2>
                         <h2 class="image-subtitle">from the series: {{ character.series_name }}</h2>
