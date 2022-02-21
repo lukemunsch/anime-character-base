@@ -64,9 +64,7 @@
                     {% for comment in comments %}
                     <div class="comments">
                         <div class="white-text">
-                            <p>
                                 {{ comment.body | linebreaks }}
-                            </p>
                             <p class="orange-text right">
                                 by <strong><em>{{ comment.name }}</em></strong>  | {{ comment.created_on }}
                             </p>
