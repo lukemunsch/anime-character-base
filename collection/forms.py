@@ -108,7 +108,6 @@ class CreateSugForm(forms.ModelForm):
             'sug_type': Select(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
-                'placeholder': 'Suggestion for a :'
             }),
             'char_sug': TextInput(attrs={
                 'class': "form-control mb-4",
