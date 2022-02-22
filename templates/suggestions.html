@@ -30,7 +30,7 @@
                 {% for suggestion in suggestion_list %}
                 <div class="card">
                     <div class="card-header blue" id="heading{{ suggestion.id }}">
-                        <h5 class="mb-0">
+                        <div class="mb-0">
                             <div class="btn list-link" data-toggle="collapse"
                                 data-target="#collapse{{ suggestion.id }}"
                                 aria-expanded="false"
@@ -48,7 +48,7 @@
                                 </span>
                                 {% endif %}
                             </div>
-                        </h5>
+                        </div>
                     </div>
                     <div id="collapse{{ suggestion.id }}" class="collapse"
                         aria-labelledby="heading{{ suggestion.id }}"
