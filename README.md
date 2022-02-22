@@ -335,7 +335,17 @@ For final deployment:
 
 - Change DEBUG to False in our settings.py file
 
-***For final deployment of site, remember to switch debug to False as this will allow anyone to gain access to secret information***
+- Add X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+This completes the settings part of Luke's Animé Base, but we still need to upload the final settings with:
+
+        git add .
+        git commit -m "deployment commit"
+        git push
+
+This should now have the final design of your site all working perfectly. You have successfully deployed the site!
+
+***JUST TO REITERATE - For final deployment of site, remember to switch debug to False as this will allow anyone to gain access to secret information***
 
 ## Credits
 

@@ -31,7 +31,7 @@
                 <div class="card">
                     <div class="card-header blue" id="heading{{ suggestion.id }}">
                         <h5 class="mb-0">
-                            <button class="btn list-link" data-toggle="collapse"
+                            <div class="btn list-link" data-toggle="collapse"
                                 data-target="#collapse{{ suggestion.id }}"
                                 aria-expanded="false"
                                 aria-controls="collapse{{ suggestion.id }}">
@@ -47,7 +47,7 @@
                                     </a>
                                 </span>
                                 {% endif %}
-                            </button>
+                            </div>
                         </h5>
                     </div>
                     <div id="collapse{{ suggestion.id }}" class="collapse"
