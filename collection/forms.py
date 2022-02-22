@@ -94,7 +94,6 @@ class AddSerForm(forms.ModelForm):
             'series_logo': FileInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
-                'placeholder': 'Series Image'
                 }),
         }
 
