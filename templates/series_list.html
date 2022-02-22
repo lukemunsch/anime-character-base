@@ -74,7 +74,7 @@
             </div>
             {% if forloop.counter|divisibleby:5 %}
         </div>
-        <div class="row offset-md-1">
+        <div class="row offset-md-1 mb-6">
             {% endif %}
             {% endfor %}
         </div>
@@ -98,8 +98,9 @@
         </div>
         <hr class="hr-orange mt-5" />
     </div>
+    {% endif %}
 </div>
-{% endif %}
+
 
 
 {% endblock %}

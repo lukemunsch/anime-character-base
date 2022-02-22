@@ -171,7 +171,7 @@ class CharacterList(generic.ListView):
         'name'
     )
     template_name = 'index.html'
-    paginate_by = 12
+    paginate_by = 10
 
 
 class SeriesList(generic.ListView):

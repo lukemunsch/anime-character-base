@@ -52,7 +52,8 @@
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmSyUp4xJ3oSaH_VAVvH6TQG4EJu-XSp7DA&usqp=CAU"
                                     alt="placeholder-character-image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ character.char_image.url }}" alt="{{ character.slug }}-image">
+                                <img class="card-img-top" src=" {{ character.char_image.url }}"
+                                    alt="{{ character.slug }}-image">
                                 {% endif %}
                                 <div class="mt-2">
                                     <h5><strong>{{ character.name }}</strong></h5>
@@ -73,43 +74,36 @@
                                     class="fas fa-trash-alt"></i></button>
                         </a>
                         {% endif %}
-                        <hr />
-                        <!-- fan score section -->
-                        <p>Fan Star Rating:</p>
-                        <div>
-                            <p>{{ Rating.average_stars }} <i class="far fa-star"></i></p>
-                            <p><span class="text-muted">from <strong>{{ Rating.number_of_votes }}</strong> votes!</span>
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
             {% if forloop.counter|divisibleby:5 %}
         </div>
-        <div class="row">
+        <div class="row offset-md-1 mb-6">
             {% endif %}
             {% endfor %}
         </div>
     </div>
-</div>
-{% if is_paginated %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div>
-            <nav class="mb-6" aria-label="Page navigation">
-                <ul class="pagination justify-content-center mb-6">
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a>
-                    </li>
-                    {% endif %}
-                    {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
+    {% if is_paginated %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <nav class="mb-6" aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mb-6">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a>
+                        </li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
         </div>
+        <hr class="hr-orange mt-5" />
     </div>
-    <hr class="hr-orange mt-5" />
+    {% endif %}
 </div>
-{% endif %}
+
 {%endblock%}
