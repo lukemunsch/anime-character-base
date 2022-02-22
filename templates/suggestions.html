@@ -16,9 +16,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-md-4 offset-md-4 text-center">
             <a href="{% url 'create_suggestion' %}">
-                <button class="btn btn-primary">Add a Suggestion</button>
+                <button class="btn btn-primary mt-3 mb-2 mr-3">Add a Suggestion</button>
             </a>
         </div>
     </div>
@@ -31,10 +31,8 @@
                 <div class="card">
                     <div class="card-header blue" id="heading{{ suggestion.id }}">
                         <div class="mb-0">
-                            <div class="btn list-link" data-toggle="collapse"
-                                data-target="#collapse{{ suggestion.id }}"
-                                aria-expanded="false"
-                                aria-controls="collapse{{ suggestion.id }}">
+                            <div class="btn list-link" data-toggle="collapse" data-target="#collapse{{ suggestion.id }}"
+                                aria-expanded="false" aria-controls="collapse{{ suggestion.id }}">
                                 {% if suggestion.sug_type == 0 %}
                                 <em>{{ suggestion.char_sug }}</em> from <strong>{{ suggestion.series_sug }}</strong>
                                 {% else %}
@@ -43,15 +41,15 @@
                                 {% if user.is_superuser %}
                                 <span>
                                     <a href="{% url 'delete_suggestion' suggestion.id %}">
-                                        <button class="btn btn-delete" aria-label="delete"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="btn btn-delete" aria-label="delete"><i
+                                                class="fas fa-trash-alt"></i></button>
                                     </a>
                                 </span>
                                 {% endif %}
                             </div>
                         </div>
                     </div>
-                    <div id="collapse{{ suggestion.id }}" class="collapse"
-                        aria-labelledby="heading{{ suggestion.id }}"
+                    <div id="collapse{{ suggestion.id }}" class="collapse" aria-labelledby="heading{{ suggestion.id }}"
                         data-parent="#accordion">
                         <div class="card-body">
                             {{ suggestion.reason}}
