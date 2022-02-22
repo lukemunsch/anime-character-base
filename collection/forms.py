@@ -36,12 +36,10 @@ class CreateCharForm(forms.ModelForm):
             'char_image': FileInput(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
-                'placeholder': 'Character Image'
             }),
             'series_name': Select(attrs={
                 'class': "form-control mb-4",
                 'style': 'max-width: 250px;',
-                'placeholder': 'Series Name'
             }),
             'age': NumberInput(attrs={
                 'class': "form-control mb-4",
