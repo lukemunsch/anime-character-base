@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-4 offset-md-4 text-center">
             <a href="{% url 'create_suggestion' %}">
-                <button class="btn btn-primary mt-3 mb-2 mr-3">Add a Suggestion</button>
+                <span class="btn btn-primary mt-3 mb-2 mr-3">Add a Suggestion</span>
             </a>
         </div>
     </div>
@@ -31,7 +31,7 @@
                 <div class="card">
                     <div class="card-header blue" id="heading{{ suggestion.id }}">
                         <div class="mb-0">
-                            <div class="btn list-link" data-toggle="collapse" data-target="#collapse{{ suggestion.id }}"
+                            <button class="btn list-link" data-toggle="collapse" data-target="#collapse{{ suggestion.id }}"
                                 aria-expanded="false" aria-controls="collapse{{ suggestion.id }}">
                                 {% if suggestion.sug_type == 0 %}
                                 <em>{{ suggestion.char_sug }}</em> from <strong>{{ suggestion.series_sug }}</strong>
@@ -46,7 +46,7 @@
                                     </a>
                                 </span>
                                 {% endif %}
-                            </div>
+                            </button>
                         </div>
                     </div>
                     <div id="collapse{{ suggestion.id }}" class="collapse" aria-labelledby="heading{{ suggestion.id }}"
