@@ -58,6 +58,9 @@ class TestSeries(TestCase):
         form.save()
         series = Series.objects.get(id=1)
         self.assertTrue(series)
+        if form.is_valid():
+            test_ser = form.save()
+            self.assertEqual(test_ser.series_name, 'test ser')
 
 
 class TestCharacter(TestCase):
