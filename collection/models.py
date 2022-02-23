@@ -9,7 +9,6 @@ class Series(models.Model):
     """set up the series category"""
     series_name = models.CharField(max_length=100, unique=True, null=False)
     series_logo = CloudinaryField('image', default='placeholder')
-    approved = models.BooleanField(default=1)
 
     class Meta:
         """set up how they will appear on the screen"""
@@ -66,7 +65,6 @@ class Comment(models.Model):
     name = models.CharField(null=False, max_length=80)
     body = models.TextField(default='', max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=True)
 
     class Meta:
         """set the order for comments"""

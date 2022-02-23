@@ -29,26 +29,14 @@ class CharacterAdmin(SummernoteModelAdmin):
 @admin.register(Series)
 class SeriesAdmin(admin.ModelAdmin):
     """set up admin page for Series"""
-    list_display = ('series_name', 'approved',)
-    list_filter = ('approved',)
-    actions = ['approve_series']
-
-    def approve_series(self, request, queryset):
-        """set up admin actions"""
-        queryset.update(approved=True)
+    list_display = ('series_name',)
 
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """set up our admin page for Comments"""
-    list_display = ('name', 'character', 'created_on', 'approved',)
-    list_filter = ('approved',)
+    list_display = ('name', 'character', 'created_on',)
     search_fields = ['character', 'name', 'email', 'body']
-    actions = ['approve_comment']
-
-    def approve_comment(self, request, queryset):
-        """set up admin actions for comments"""
-        queryset.update(approved=True)
 
 
 @admin.register(Suggestion)

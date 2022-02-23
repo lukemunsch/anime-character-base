@@ -56,10 +56,12 @@ class TestSeries(TestCase):
         s = self.create_ser()
         self.assertTrue(isinstance(s, Series))
         self.assertEqual(s.__str__(), s.series_name)
-    
+
     def test_series_admin(self):
-        s = self.create_ser(approved=0)
-        self.
+        """admin test to check if pproving series works"""
+        s = self.create_ser(approved=False)
+        SeriesAdmin.approve_series(s, request=None, queryset=s.approved)
+        self.assertTrue(s.approved)
 
 
 class TestCharacter(TestCase):
@@ -137,6 +139,10 @@ class TestComment(TestCase):
         c = self.create_com(character=character)
         self.assertTrue(isinstance(c, Comment))
         self.assertEqual(c.__str__(), c.name)
+    
+    def test_comment_admin(self):
+        """test for updating comment approval"""
+        
 
 
 class TestSuggestion(TestCase):
