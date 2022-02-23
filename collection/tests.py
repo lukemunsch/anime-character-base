@@ -1,4 +1,6 @@
 from django.test import TestCase
+from django.shortcuts import reverse
+from django.contrib.messages.api import get_messages
 from .models import (
     Character,
     Series,
@@ -54,6 +56,8 @@ class TestSeries(TestCase):
         })
         self.assertTrue(form.is_valid())
         form.save()
+        series = Series.objects.get(id=1)
+        self.assertTrue(series)
 
 
 class TestCharacter(TestCase):
@@ -122,9 +126,6 @@ class TestCharacter(TestCase):
             'status': '1'
         })
         self.assertTrue(form.is_valid())
-
-    def test_edit_character_view(self):
-        """testing our editing function view for character"""
 
 
 class TestComment(TestCase):

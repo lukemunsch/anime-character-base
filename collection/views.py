@@ -71,11 +71,11 @@ def create_series(request):
         series_form = AddSerForm(request.POST, request.FILES)
         if series_form.is_valid():
             series_form.save()
-        messages.add_message(
-            request,
-            messages.SUCCESS,
-            'Series Successfully Created'
-        )
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Series Successfully Created'
+                )
         return redirect(reverse('series_list'))
     series_form = AddSerForm()
     context = {
