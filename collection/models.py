@@ -73,7 +73,7 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return f'Comment {self.body} | {self.name}'
+        return self.name
 
 
 SUG_TYPE = ((0, "Character"), (1, "Series"))
@@ -92,4 +92,4 @@ class Suggestion(models.Model):
         ordering = ['created_when']
 
     def __str__(self):
-        return f'{self.sug_type} | {self.created_when}'
+        return self.reason

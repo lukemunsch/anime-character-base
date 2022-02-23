@@ -143,6 +143,8 @@ One thing that I looked into was the Rating system and implementing a way for us
 
 ### Lighthouse Reports
 
+Here are the lighthouse reports for validation that Luke's Animé Base is suitable:
+
 [Create character page](static/images/lighthouse-reps/add-character-lighthouse.png)
 
 [Character details](static/images/lighthouse-reps/char-details-lighthouse.png)
@@ -161,9 +163,31 @@ One thing that I looked into was the Rating system and implementing a way for us
 
 ### HTML Testing
 
-html validator screenshot
+After running tests on the documents in W3C validator, these are the confirmation images of the completed reports
+
+[Character Details](static/images/validators/html-vals/char-det-html-val.png)
+
+[Create Character](static/images/validators/html-vals/create-char-html-val.png)
+
+[Create Series](static/images/validators/html-vals/create-ser-html-val.png)
+
+[Create Suggestion](static/images/validators/html-vals/create-sug-html-val.png)
+
+[Edit Character](static/images/validators/html-vals/edit-char-html-val.png)
+
+[Edit Series](static/images/validators/html-vals/edit-ser-html-val.png)
+
+[Index Page](static/images/validators/html-vals/index-html-val.png)
+
+[Login Page](static/images/validators/html-vals/login-htmlval.png)
+
+[Signup Page](static/images/validators/html-vals/signup-html-val.png)
+
+[Suggestions Page](static/images/validators/html-vals/sug-html-val.png)
 
 ### CSS testing
+
+This is the completed test for my CSS file:
 
 [CSS Validator](static/images/validators/css-validator.png)
 
@@ -177,7 +201,7 @@ This is the testing files report for tests run on pages
 
 ## Unfixed Bugs
 
-Anything that doesn't work properly
+There is currently an issue with styling of the images that apear on the character detail page where the file doens't quite sit in the correct place and is not responsive; If I remove the size limit then the image sits behind the text on the right instead of fitting itself to the container. This was addressed by myself and tutors, but was unable to fix the issue.
 
 ## Deployment
 
