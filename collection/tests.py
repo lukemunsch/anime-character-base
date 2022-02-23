@@ -41,14 +41,12 @@ class TestSeries(TestCase):
     def create_ser(
         self,
         series_name="TEST",
-        series_logo="placeholder",
-        approved=1
+        series_logo="placeholder"
         ):
         """create a series"""
         return Series.objects.create(
             series_name=series_name,
-            series_logo=series_logo,
-            approved=approved
+            series_logo=series_logo
             )
 
     def test_series_creation(self):
@@ -56,12 +54,6 @@ class TestSeries(TestCase):
         s = self.create_ser()
         self.assertTrue(isinstance(s, Series))
         self.assertEqual(s.__str__(), s.series_name)
-
-    def test_series_admin(self):
-        """admin test to check if pproving series works"""
-        s = self.create_ser(approved=False)
-        SeriesAdmin.approve_series(s, request=None, queryset=s.approved)
-        self.assertTrue(s.approved)
 
 
 class TestCharacter(TestCase):
@@ -119,15 +111,13 @@ class TestComment(TestCase):
         name="joe",
         body="test body",
         created_on="2022-02-22",
-        approved=True
         ):
         """creating instance of comm"""
         return Comment.objects.create(
             character=character,
             name=name,
             body=body,
-            created_on=created_on,
-            approved=approved
+            created_on=created_on
             )
     
     def test_comment_creation(self):
@@ -142,7 +132,7 @@ class TestComment(TestCase):
     
     def test_comment_admin(self):
         """test for updating comment approval"""
-        
+
 
 
 class TestSuggestion(TestCase):
