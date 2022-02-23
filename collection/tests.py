@@ -5,12 +5,6 @@ from .models import (
     Suggestion,
     Comment
 )
-from .admin import (
-    CharacterAdmin,
-    SeriesAdmin,
-    CommentAdmin,
-    SuggestionAdmin
-)
 from .forms import (
     CreateCharForm,
     CreateSugForm,
@@ -34,8 +28,6 @@ from .views import (
 )
 
 
-
-
 class TestSeries(TestCase):
     """set up tests for Series"""
     def create_ser(
@@ -49,11 +41,19 @@ class TestSeries(TestCase):
             series_logo=series_logo
             )
 
-    def test_series_creation(self):
-        """testing for series"""
+    def test_series_return_str(self):
+        """testing for series returns"""
         s = self.create_ser()
         self.assertTrue(isinstance(s, Series))
         self.assertEqual(s.__str__(), s.series_name)
+
+    def test_series_creation_view(self):
+        """test if series creation is functioning"""
+        form = AddSerForm({
+            'series_name': 'test ser',
+        })
+        self.assertTrue(form.is_valid())
+        form.save()
 
 
 class TestCharacter(TestCase):
@@ -92,8 +92,8 @@ class TestCharacter(TestCase):
             updated_on=updated_on,
             status=status
         )
-    
-    def test_character_creation(self):
+
+    def test_character_return_str(self):
         """test for character creation"""
         series = Series(series_name="test")
         series.save()
@@ -101,6 +101,30 @@ class TestCharacter(TestCase):
         self.assertTrue(isinstance(c, Character))
         self.assertEqual(c.__str__(), c.name)
 
+    def test_create_char_view(self):
+        """test for our create character"""
+        series = Series(series_name="test")
+        series.save()
+        form = CreateCharForm({
+            'name': 'test',
+            'slug': 'test',
+            'char_image': 'image',
+            'series_name': series,
+            'first_aired': '2022-02-22',
+            'first_published': '2022-02-22',
+            'age': '22',
+            'bio': "test bio",
+            'special': 'test spec',
+            'good_reason': 'good test',
+            'bad_reason': 'bad test',
+            'created_on': '2022-02-22',
+            'updated_on': '2022-02-22',
+            'status': '1'
+        })
+        self.assertTrue(form.is_valid())
+
+    def test_edit_character_view(self):
+        """testing our editing function view for character"""
 
 
 class TestComment(TestCase):
@@ -120,7 +144,7 @@ class TestComment(TestCase):
             created_on=created_on
             )
     
-    def test_comment_creation(self):
+    def test_comment_return_str(self):
         """create a comment"""
         series = Series(series_name="Test")
         series.save()
@@ -129,10 +153,6 @@ class TestComment(TestCase):
         c = self.create_com(character=character)
         self.assertTrue(isinstance(c, Comment))
         self.assertEqual(c.__str__(), c.name)
-    
-    def test_comment_admin(self):
-        """test for updating comment approval"""
-
 
 
 class TestSuggestion(TestCase):
@@ -154,7 +174,7 @@ class TestSuggestion(TestCase):
             created_when=created_when
         )
 
-    def test_suggestion_creation(self):
+    def test_suggestion_return_str(self):
         """test our creation"""
         s = self.create_sug()
         self.assertTrue(s, Suggestion)

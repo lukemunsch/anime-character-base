@@ -188,7 +188,7 @@ class CharDetail(View):
         """retrieving from the database"""
         queryset = Character.objects.all()
         character = get_object_or_404(queryset, slug=slug)
-        comments = character.comments.filter(approved=True).order_by(
+        comments = character.comments.all().order_by(
             '-created_on'
         )
 
@@ -207,7 +207,7 @@ class CharDetail(View):
         """set up how the post of our comments works"""
         queryset = Character.objects.filter(status=1)
         character = get_object_or_404(queryset, slug=slug)
-        comments = character.comments.filter(approved=True).order_by(
+        comments = character.comments.all().order_by(
             '-created_on'
         )
 

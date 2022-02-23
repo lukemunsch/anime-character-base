@@ -197,7 +197,13 @@ I have run my site through the PEP8 validators and report no issues regarding Lu
 
 ### Site Tests
 
-This is the testing files report for tests run on pages
+#### Manual Test
+
+I have run this project one numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site
+
+#### Automatic Tests
+
+This will be a link to the html coverage file that confirms my test completiong
 
 ## Unfixed Bugs
 
