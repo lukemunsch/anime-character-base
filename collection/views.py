@@ -26,7 +26,7 @@ def create_char(request):
 
 
 def edit_char(request, slug):
-    """process how to delete a character"""
+    """process how to update a character"""
     char = get_object_or_404(Character, slug=slug)
     if request.method == "POST":
         char_form = CreateCharForm(
@@ -125,7 +125,7 @@ def delete_series(request, id):
 
 
 class SuggestionList(generic.ListView):
-    """this is the display of our Character model"""
+    """this is the display of our Suggestion model"""
     model = Suggestion
     queryset = Suggestion.objects.order_by('series_sug', 'char_sug')
     template_name = 'suggestions.html'
@@ -133,7 +133,7 @@ class SuggestionList(generic.ListView):
 
 
 def create_sug(request):
-    """processing how my suggestion form will render"""
+    """processing how my suggestion creation form will render"""
     if request.method == "POST":
         sug_form = CreateSugForm(request.POST)
         if sug_form.is_valid():
@@ -183,7 +183,7 @@ class SeriesList(generic.ListView):
 
 
 class CharDetail(View):
-    """creating he view for our character's main pages"""
+    """creating the view for our character's main pages"""
     def get(self, request, slug, *args, **kwargs):
         """retrieving from the database"""
         queryset = Character.objects.all()
@@ -234,7 +234,7 @@ class CharDetail(View):
 
 
 def delete_comm(request, comm_id):
-    """set up the deletion of suggestions from our list"""
+    """set up the deletion of comments from our list"""
     comment = get_object_or_404(Comment, id=comm_id)
     comment.delete()
     char_id = request.GET.get('charid')

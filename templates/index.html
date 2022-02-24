@@ -29,10 +29,10 @@
             <div class="row">
                 <div class="col-md-4 offset-md-4 text-center">
                     <a href="{% url 'create_character' %}">
-                        <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Character</button>
+                        <span class="btn btn-primary mt-3 mb-2 mr-3">Add New Character</span>
                     </a>
                     <a href="{% url 'create_series' %}">
-                        <button class="btn btn-primary mt-3 mb-2 mr-3">Add New Series</button>
+                        <span class="btn btn-primary mt-3 mb-2 mr-3">Add New Series</span>
                     </a>
                 </div>
             </div>
@@ -66,12 +66,12 @@
                         {% if user.is_superuser %}
                         <hr />
                         <a href="{% url 'edit_char' character.slug %}" class="character-edit">
-                            <button type="button" class="btn btn-edit mr-3" aria-label="edit"><i
-                                    class="fas fa-edit"></i></button>
+                            <span type="button" class="btn btn-edit mr-3" aria-label="edit"><i
+                                    class="fas fa-edit"></i></span>
                         </a>
                         <a href="{% url 'delete_char' character.slug %}" class="character-delete">
-                            <button type="button" class="btn btn-delete" aria-label="delete"><i
-                                    class="fas fa-trash-alt"></i></button>
+                            <span type="button" class="btn btn-delete" aria-label="delete"><i
+                                    class="fas fa-trash-alt"></i></span>
                         </a>
                         {% endif %}
                     </div>

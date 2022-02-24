@@ -61,12 +61,12 @@
                         <!-- bring up modal for confirmation -->
                         <hr />
                         <a href="{% url 'edit_series' series.id %}">
-                            <button type="button" class="btn btn-edit mr-3" aria-label="edit"><i
-                                    class="fas fa-edit"></i></button>
+                            <span type="button" class="btn btn-edit mr-3" aria-label="edit"><i
+                                    class="fas fa-edit"></i></span>
                         </a>
                         <a href="{% url 'delete_series' series.id %}">
-                            <button type="button" class="btn btn-delete" aria-label="delete"><i
-                                    class="fas fa-trash-alt"></i></button>
+                            <span type="button" class="btn btn-delete" aria-label="delete"><i
+                                    class="fas fa-trash-alt"></i></span>
                         </a>
                         {% endif %}
                     </div>

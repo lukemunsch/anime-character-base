@@ -163,7 +163,7 @@ Here are the lighthouse reports for validation that Luke's Animé Base is suitab
 
 ### HTML Testing
 
-After running tests on the documents in W3C validator, these are the confirmation images of the completed reports
+After running tests on the documents in the W3C validator, these are the confirmation images of the completed reports
 
 [Character Details](static/images/validators/html-vals/char-det-html-val.png)
 
@@ -199,15 +199,17 @@ I have run my site through the PEP8 validators and report no issues regarding Lu
 
 #### Manual Test
 
-I have run this project one numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site
+I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site
 
 #### Automatic Tests
 
-This will be a link to the html coverage file that confirms my test completiong
+I had a lot of problems with my testing; the testing I completed covers 89% of my project, but my views struggled to get up to completion. I have included the report for the testing that I have done which shows my automatic tests.
+
+[Coverage Report](static/images/validators/test-coverage.png)
 
 ## Unfixed Bugs
 
-There is currently an issue with styling of the images that apear on the character detail page where the file doens't quite sit in the correct place and is not responsive; If I remove the size limit then the image sits behind the text on the right instead of fitting itself to the container. This was addressed by myself and tutors, but was unable to fix the issue.
+There is currently an issue with the styling of the images that appear on the character detail page where the file doesn't quite sit in the correct place and is not responsive; If I remove the size limit then the image sits behind the text on the right instead of fitting itself to the container. This was addressed by myself and tutors but was unable to fix the issue.
 
 ## Deployment
 
@@ -385,4 +387,4 @@ My mentor Chris Quinn was amazing at helping me to understand the project and gu
 
 The Slack community helped me with user stories and quick fixes that allowed me to progress with my project when I became stumped.
 
-A huge thank you to Scott and John from the tutors as they were regular helpers on this project and fixing an issue regarding my static files.
+A huge thank you to Scott and John from the tutors as they were regular helpers on this project and fixed an issue regarding my static files.
