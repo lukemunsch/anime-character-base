@@ -33,7 +33,7 @@ https://lukeanimebase.herokuapp.com/
 
 ## LucidChart ERD Diagram
 
-This is the original mock-up for my ERD diagram; some changes have been made to remove uneccesary fields from the objects. The majority of the ERD has remained the same into the project itself.
+This is the original mock-up for my ERD diagram; some changes have been made to remove unnecessary fields from the objects. The majority of the ERD has remained the same in the project itself.
 
 [Luke's Animé Base ERD Diagram](static/images/lukeanimebaseERD.png)
 
@@ -59,9 +59,9 @@ To bring my idea to life, I have knocked up some wireframes to help me make my a
 
 Luke's Animé Character Base is a site that will allow the Owner of the site to manage their favorite characters from their favorite animé shows.
 
-The owner of the site can create a series and then list their favorite characters. They have the ability to manage the content through editing, adding or deleting content to kep the information correct and fresh and even change the images in order to change it up a bit when they want.
+The owner of the site can create a series and then list their favorite characters. They can manage the content through editing, adding, or deleting content to keep the information correct and fresh and even change the images to change it up a bit when they want.
 
-If a character that the users like doesn't appear on the site, then they can login and send a suggestion to the Owner and other people can see the suggestions, too; That way they can reduce the number of similar suggestions in the list.
+If a character that the users like doesn't appear on the site, then they can log in and send a suggestion to the Owner and other people can see the suggestions, too; That way they can reduce the number of similar suggestions in the list.
 
 ## User Stories
 
@@ -73,7 +73,7 @@ To build Luke's Animé Base I used an Agile approach and built a kanban board fo
 
 [Kanban Board](https://github.com/lukemunsch/anime-character-base/projects)
 
-For my site to maximize the engagement, this is the list of user stories that appear in my project kanban board to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
+For my site to maximize the engagement, this is the list of user stories that appear in my project Kanban board to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
 
 [[#1](https://github.com/lukemunsch/anime-character-base/issues/1)] - Display Characters on the main index page for users
 
@@ -204,14 +204,14 @@ I have run my site through the PEP8 validators and report no issues regarding Lu
 
 #### ***Manual Test***
 
-I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site. As an admin I was successful in creating characters, deleting characters, and editing them to keep them updated.
+I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site. As an admin, I was successful in creating characters, deleting characters, and editing them to keep them updated.
 
-I have also run tests manually on the ability to log in as different levels of users; normal users and admin users. Normal users are unable to access any content through use of:
+I have also run tests manually on the ability to log in as different levels of users; normal users and admin users. Normal users are unable to access any content through the use of:
 
         {% if user.is_superuser %}
         {% endif %}
 
-meaning that no one except the admin can delete or edit, or add content except comments which is encouraged by Luke's Anime Base.
+meaning that no one except the admin can delete or edit, or add content except comments which is encouraged by Luke's Anime Base. Admin users see the extra content which includes buttons for editing and deleting on individual series, characters, comments, suggestions (delete only), and an extra menu option in the navbar. The navbar is also responsive and will only allow access to certain actions depending on logged in or not, as admin or not.
 
 #### ***Automatic Tests***
 
