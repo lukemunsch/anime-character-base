@@ -33,33 +33,35 @@ https://lukeanimebase.herokuapp.com/
 
 ## LucidChart ERD Diagram
 
+This is the original mock-up for my ERD diagram; some changes have been made to remove uneccesary fields from the objects. The majority of the ERD has remained the same into the project itself.
+
 [Luke's Animé Base ERD Diagram](static/images/lukeanimebaseERD.png)
 
 ## Wireframes
 
 To bring my idea to life, I have knocked up some wireframes to help me make my app and how to structure the content. I have made these for each relevant page (some I have grouped as content and forms are going to look so similar):
 
-[Index page](static/images/index.png)
+[Index page](static/images/wireframes/index.png)
 
-[Character Detail](static/images/character_detail.png)
+[Character Detail](static/images/wireframes/character_detail.png)
 
-[Series List](static/images/series_list.png)
+[Series List](sstatic/images/wireframes/series_list.png)
 
-[Suggestions](static/images/suggestions_wireframe.png)
+[Suggestions](static/images/wireframes/suggestions_wireframe.png)
 
-[Create/Edit Character/Series/Suggestion](static/images/add_edit_char_series_sug.png)
+[Create/Edit Character/Series/Suggestion](static/images/wireframes/add_edit_char_series_sug.png)
 
-[Sign In/Up](static/images/sign_in_up.png)
+[Sign In/Up](static/images/wireframes/sign_in_up.png)
 
-[Sign Out](static/images/sign_out.png)
+[Sign Out](static/images/wireframes/sign_out.png)
 
 ## Overview
 
 Luke's Animé Character Base is a site that will allow the Owner of the site to manage their favorite characters from their favorite animé shows.
 
-The owner of the site can create a series and then list their favorite characters. Users will then be able to rate their favorite characters and leave comments on them for the Owner to review.
+The owner of the site can create a series and then list their favorite characters. They have the ability to manage the content through editing, adding or deleting content to kep the information correct and fresh and even change the images in order to change it up a bit when they want.
 
-If a character that the users like doesn't appear on the site, then they can send a suggestion to the Owner and other people can see the suggestions too.
+If a character that the users like doesn't appear on the site, then they can login and send a suggestion to the Owner and other people can see the suggestions, too; That way they can reduce the number of similar suggestions in the list.
 
 ## User Stories
 
@@ -67,7 +69,11 @@ When people visit my site, I want them to be able to engage with the content; Vi
 
 On all future visits, I would like them to see how the characters have been 'treated' by other users; new comments and engage with other users, add new suggestions if one comes to mind.
 
-For my site to maximize the engagement, this is the list of user stories to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
+To build Luke's Animé Base I used an Agile approach and built a kanban board for my User stories to help guide me towards which features I needed.
+
+[Kanban Board](https://github.com/lukemunsch/anime-character-base/projects)
+
+For my site to maximize the engagement, this is the list of user stories that appear in my project kanban board to address my problem statement - "How do I create a site that allows the maximum engagement from users to interact with my content"
 
 [[#1](https://github.com/lukemunsch/anime-character-base/issues/1)] - Display Characters on the main index page for users
 
