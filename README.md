@@ -165,25 +165,23 @@ Here are the lighthouse reports for validation that Luke's Animé Base is suitab
 
 After running tests on the documents in the W3C validator, these are the confirmation images of the completed reports
 
-[Character Details](static/images/validators/html-vals/char-det-html-val.png)
+[Index page](https://validator.w3.org/nu/?doc=https://lukeanimebase.herokuapp.com/)
 
-[Create Character](static/images/validators/html-vals/create-char-html-val.png)
+[Series list](https://validator.w3.org/nu/?doc=https://lukeanimebase.herokuapp.com/series_list/)
 
-[Create Series](static/images/validators/html-vals/create-ser-html-val.png)
+[Suggestions page](https://validator.w3.org/nu/?doc=https%3A%2F%2Flukeanimebase.herokuapp.com%2Fsuggestions%2F)
 
-[Create Suggestion](static/images/validators/html-vals/create-sug-html-val.png)
+[Account register](https://validator.w3.org/nu/?doc=https://lukeanimebase.herokuapp.com/accounts/signup/)
 
-[Edit Character](static/images/validators/html-vals/edit-char-html-val.png)
+[Account login](https://validator.w3.org/nu/?doc=https://lukeanimebase.herokuapp.com/accounts/login/)
 
-[Edit Series](static/images/validators/html-vals/edit-ser-html-val.png)
+[Account logout](https://validator.w3.org/nu/?doc=https%3A%2F%2Flukeanimebase.herokuapp.com%2Faccounts%2Flogout%2F)
 
-[Index Page](static/images/validators/html-vals/index-html-val.png)
+[Example of character viewing page](https://validator.w3.org/nu/?doc=https://lukeanimebase.herokuapp.com/naruto-naruto-uzumaki/)
 
-[Login Page](static/images/validators/html-vals/login-htmlval.png)
+[Delete page](https://validator.w3.org/nu/?doc=https%3A%2F%2Flukeanimebase.herokuapp.com%2Fdelete_char%2Fazur-lane-test-pag)
 
-[Signup Page](static/images/validators/html-vals/signup-html-val.png)
-
-[Suggestions Page](static/images/validators/html-vals/sug-html-val.png)
+[Create page](https://validator.w3.org/nu/?doc=https%3A%2F%2Flukeanimebase.herokuapp.com%2Fcreate_character%2F)
 
 ### CSS testing
 
@@ -199,7 +197,7 @@ I have run my site through the PEP8 validators and report no issues regarding Lu
 
 #### Manual Test
 
-I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site
+I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site. As an admin I was successful in creating characters, deleting characters, and editing them to keep them updated.
 
 #### Automatic Tests
 
@@ -210,6 +208,10 @@ I had a lot of problems with my testing; the testing I completed covers 89% of m
 ## Unfixed Bugs
 
 There is currently an issue with the styling of the images that appear on the character detail page where the file doesn't quite sit in the correct place and is not responsive; If I remove the size limit then the image sits behind the text on the right instead of fitting itself to the container. This was addressed by myself and tutors but was unable to fix the issue.
+
+If an Admin user attempts to create an object that is the same as something that already exists, the new object doesn't appear, but no warning comes up; we do get the confirmation that the series was created, but that is not what we want.
+
+Another issue is the responsive nature of divisibleby:number; My page doesn't always have the perfect alignment for its displayed items, which means sometimes the rows are not quite filled all the way. This is something that I would look into if I were to develop this app further.
 
 ## Deployment
 

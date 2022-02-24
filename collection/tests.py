@@ -211,7 +211,13 @@ class TestSuggestion(TestCase):
 
     def test_can_add_item(self):
         """test to see if we can add a suggestion"""
-        response = self.client.post('/create_suggestion/', {'sug_type': 1, 'reason': 'test reason'})
+        response = self.client.post(
+            '/create_suggestion/',
+            {
+                'sug_type': 1,
+                'reason': 'test reason'
+            }
+        )
         self.assertRedirects(response, '/suggestions/')
 
     def test_delete_sug_get_obj_or_404(self):
