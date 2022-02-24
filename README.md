@@ -4,26 +4,27 @@
 
 ## # Table of contents:
 
-1. [Link To Live Site](#linktolivesite)
-2. [LucidChart ERD Diagram](#lucidcharterddiagram)
+1. [Link To Live Site](#link-to-live-site)
+2. [LucidChart ERD Diagram](#lucidchart-erd-diagram)
 3. [Wireframes](#wireframes)
 3. [Overview](#overview)
-4. [User Stories](#userstories)
+4. [User Stories](#user-stories)
 6. [Features](#features)
-    1. [Index Page](#indexpage)
-    2. [Character View Page](#characterviewpage)
-    3. [View/Add Series List Page](#serieslist)
-    4. [Suggestions Page](#suggestionspage)
-    5. [Sign In/Out/Up Pages](#signin/out/uppages)
-    6. [Create/edit Character Page](#createcharacterpage)
-7. [Features to Implement](#featurestoimplement)
+    1. [Index Page](#index-page)
+    2. [Character View Page](#character-view-page)
+    3. [View/Add Series List Page](#series-list)
+    4. [Suggestions Page](#suggestions-page)
+    5. [Sign In/Out/Up Pages](#sign-in/out/up-pages)
+    6. [Create/edit Character Page](#create/edit-character-page)
+7. [Features to Implement](#features-to-implement)
 8. [Testing](#testing)
-    1. [Lighthouse Reports](#lighthousereports)    
-9. [Unfixed Bugs](#unfixedbugs)
+    1. [Lighthouse Reports](#lighthouse-reports)
+    2. [HTML Testing](#html-testing)   
+9. [Unfixed Bugs](#unfixed-bugs)
 10. [Deployment](#deployment)
-    1. [Forking and Cloning](#forkingandcloning)
-    2. [Local Deployment](#localdeployment)
-    3. [Remote Deployment](#remotedeployment)
+    1. [Forking and Cloning](#forking-and-cloning)
+    2. [Local Deployment](#local-deployment)
+    3. [Remote Deployment](#remote-deployment)
 11. [Credits](#credits)
 
 ## Link to live site
@@ -198,6 +199,13 @@ I have run my site through the PEP8 validators and report no issues regarding Lu
 #### ***Manual Test***
 
 I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site. As an admin I was successful in creating characters, deleting characters, and editing them to keep them updated.
+
+I have also run tests manually on the ability to log in as different levels of users; normal users and admin users. Normal users are unable to access any content through use of:
+
+        {% if user.is_superuser %}
+        {% endif %}
+
+meaning that no one except the admin can delete or edit, or add content except comments which is encouraged by Luke's Anime Base.
 
 #### ***Automatic Tests***
 
