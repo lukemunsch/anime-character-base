@@ -76,7 +76,7 @@ For my site to maximize the engagement, this is the list of user stories to addr
 
 [[#4](https://github.com/lukemunsch/anime-character-base/issues/4)] - Delete Character if no longer require or no one comments
 
-[[#5](https://github.com/lukemunsch/anime-character-base/issues/5)] - Rate Character - This was not completed but would involve user input to show the most popular characters
+[[#5](https://github.com/lukemunsch/anime-character-base/issues/5)] - Rate Character - I decided not to implement this as I was unable to resolve the issues that it generated; This will be something I discuss in my unfixed bugs.
 
 [[#6](https://github.com/lukemunsch/anime-character-base/issues/6)] - Comment on Characters so that people can leave their feedback
 
@@ -195,11 +195,11 @@ I have run my site through the PEP8 validators and report no issues regarding Lu
 
 ### Site Tests
 
-#### Manual Test
+#### ***Manual Test***
 
 I have run this project on numerous different devices and involved outside users to create their own logins and comments; all functionality worked correctly and no errors were discovered on deployed site. As an admin I was successful in creating characters, deleting characters, and editing them to keep them updated.
 
-#### Automatic Tests
+#### ***Automatic Tests***
 
 I had a lot of problems with my testing; the testing I completed covers 89% of my project, but my views struggled to get up to completion. I have included the report for the testing that I have done which shows my automatic tests.
 
@@ -208,6 +208,8 @@ I had a lot of problems with my testing; the testing I completed covers 89% of m
 ## Unfixed Bugs
 
 There is currently an issue with the styling of the images that appear on the character detail page where the file doesn't quite sit in the correct place and is not responsive; If I remove the size limit then the image sits behind the text on the right instead of fitting itself to the container. This was addressed by myself and tutors but was unable to fix the issue.
+
+I was unable to complete the Rating System I had planned for the characters; Due to the lack of time required once deciding to implement this, I decided to forgo the rating as my app still contains full CRUD ability as well as user interaction and engagement without this feature.
 
 If an Admin user attempts to create an object that is the same as something that already exists, the new object doesn't appear, but no warning comes up; we do get the confirmation that the series was created, but that is not what we want.
 
