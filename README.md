@@ -411,4 +411,8 @@ My mentor Chris Quinn was amazing at helping me to understand the project and gu
 
 The Slack community helped me with user stories and quick fixes that allowed me to progress with my project when I became stumped.
 
-A huge thank you to Scott and John from the tutors as they were regular helpers on this project and fixed an issue regarding my static files.
+A huge thank you to Scott and John from the tutors as they were regular helpers on this project and fixed an issue regarding my static files. There have been many other helpers form the tutor teams as well.
+
+Django docs have played a big role in helping me to create a properly working site and undestanding the benefits of using this framework.
+
+Stackoverflow users facing similar problems and their comments have been crucial to helping me find solutions to my own issues. I am very appreciative of others helpful responses.
