@@ -405,7 +405,7 @@ This should now have the final design of your site all working perfectly. You ha
 
 ## Credits
 
-I would like to thank the dedicated team of tutors at Code Institute for helping me to overcome certain issues with the project regarding several different problems that arose.
+I would like to thank the dedicated team of tutors at Code Institute for helping me to overcome certain issues with the project regarding several different problems that arose. I have used the previous walkthroughs and projects as inspiration for helping me to accomplish Luke's Animé Base creation.
 
 My mentor Chris Quinn was amazing at helping me to understand the project and guide me to create the best possible project.
 
@@ -416,3 +416,5 @@ A huge thank you to Scott and John from the tutors as they were regular helpers 
 Django docs have played a big role in helping me to create a properly working site and undestanding the benefits of using this framework.
 
 Stackoverflow users facing similar problems and their comments have been crucial to helping me find solutions to my own issues. I am very appreciative of others helpful responses.
+
+Other research has been done to help me, but their sources have only been used as inspiration, not copying directly from their work.
