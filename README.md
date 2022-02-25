@@ -146,6 +146,8 @@ These are the pages that I have set up to make the site as functional as the Own
 
 One thing that I looked into was the Rating system and implementing a way for users to vote for their favorite characters. I came across many different issues that prevented me from making it work and with the limited time, I decided to remove my attempt and leave it out of my final deployment.
 
+There is also the option to add flitering and searching from the main page that would help people find the charcters they want. Currently, the characters are displayed alphabetically by series, then alphabetically by character, but filtering, or including a list of available Characters/series would allow people faster methods of searching then interaction.
+
 ## Testing
 
 ### Lighthouse Reports
