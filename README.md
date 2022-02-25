@@ -231,6 +231,8 @@ If an Admin user attempts to create an object that is the same as something that
 
 Another issue is the responsive nature of divisibleby:number; My page doesn't always have the perfect alignment for its displayed items, which means sometimes the rows are not quite filled all the way. This is something that I would look into if I were to develop this app further.
 
+One last thing I noticed is the slug doesn't amend itself if you edit the character, once assigned the slug, even if you are to edit characters and change all details, the slug remains according the original. This doesn't affect the performance of the site, but it may be something that epople notice.
+
 ## Deployment
 
 To deploy the project, allow other people to run the app and see it working, there are 3 methods to allow you to complete these actions:
@@ -264,7 +266,9 @@ For this project, remote deployment is a complex procedure and I will list out t
 - We now need to build our Project structure using the CLI:
 
         django-admin startproject PROJ_NAME .
+
 ***The trailing full stop is very important so please don't forget to include it in your command***
+
     - For my project, I named it lukeanimebase, but you can choose anything.
 
 - Once we have the project, we need to create an actual app to handle our individual functions:
