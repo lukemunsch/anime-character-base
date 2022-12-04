@@ -107,7 +107,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'lukeanimebase.wsgi.application'
+WSGI_APPLICATION = 'anime-base.wsgi.application'
 
 
 # Database
